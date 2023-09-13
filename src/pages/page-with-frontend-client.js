@@ -1,9 +1,8 @@
 import Head from "next/head";
 import { Inter } from "next/font/google";
 import { createSupabase } from "@/supabase-client"; // Manual Variant
-import { useEffect } from "react";
+import { useEffect, useState } from "react";
 import { useSupabaseClient } from "@supabase/auth-helpers-react";
-import Link from "next/link";
 
 const inter = Inter({ subsets: ["latin"] });
 
@@ -19,34 +18,39 @@ export default function Home() {
 
   // Context-based Variant:
   const supabase = useSupabaseClient();
+  const [buckets, setBuckets] = useState(null);
+
   useEffect(() => {
     console.log(supabase);
 
     supabase.storage.listBuckets().then((result) => {
       console.log("Bucket List", result);
+      setBuckets(result);
     });
   }, [supabase]);
 
   return (
     <>
       <Head>
-        <title>Supabase Pages Router</title>
+        <title>Frontend Client / Pages Router</title>
       </Head>
+      <main>
+        <div>
+          <h1>
+            Page with Frontend Client usage via <code>useEffect</code> and{" "}
+            <code>useSupabaseClient</code>
+          </h1>
 
-      <ul>
-        <li>
-          <Link className="highlight" href="/page-with-server-client">
-            Page with <strong>Server Client</strong> usage in{" "}
-            <code>getServerSideProps</code>
-          </Link>
-        </li>
-        <li>
-          <Link className="highlight" href="/page-with-frontend-client">
-            Page with <strong>Frontend Client</strong> usage in{" "}
-            <code>getServerSideProps</code>
-          </Link>
-        </li>
-      </ul>
+          {buckets === null && <strong>Loading...</strong>}
+
+          {buckets !== null && (
+            <>
+              <h2>Result:</h2>
+              <pre>{JSON.stringify(buckets, null, 2)}</pre>
+            </>
+          )}
+        </div>
+      </main>
     </>
   );
 }
