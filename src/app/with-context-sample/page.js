@@ -1,10 +1,11 @@
 "use client";
 
+import { useSupabaseClient } from "@supabase/auth-helpers-react";
 import { createClientComponentClient } from "@supabase/auth-helpers-nextjs";
 import { useEffect, useState } from "react";
 
 export default function WithoutContextSample() {
-  const supabase = createClientComponentClient();
+  const supabase = useSupabaseClient();
   const [buckets, setBuckets] = useState(null);
 
   useEffect(() => {
@@ -16,7 +17,7 @@ export default function WithoutContextSample() {
   return (
     <>
       <div>
-        Without <code className="inline">Context</code> Sample
+        With <code className="inline">SessionContext</code>
       </div>
 
       <code data-label="Buckets">

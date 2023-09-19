@@ -42,7 +42,13 @@ code {
     min-width: 250px;
   }
 
-  &.card {
+  &.inline {
+    display: inline-block;
+    margin: 0;
+
+    &::before {
+      display: none;
+    }
   }
 }
 
