@@ -1,4 +1,5 @@
 import "@/styles/globals.scss";
+import SupabaseProvider from "./SupabaseProvider";
 
 export default function RootLayout({
   // Layouts must accept a children prop.
@@ -11,7 +12,9 @@ export default function RootLayout({
         <meta name="viewport" content="width=device-width, initial-scale=1" />
       </head>
       <body>
-        <main>{children}</main>
+        <SupabaseProvider>
+          <main>{children}</main>
+        </SupabaseProvider>
       </body>
     </html>
   );

@@ -47,8 +47,9 @@ code {
   }
 
   &.inline {
-    display: inline-block;
+    display: inline;
     margin: 0;
+    padding: 0 4px;
 
     &::before {
       display: none;

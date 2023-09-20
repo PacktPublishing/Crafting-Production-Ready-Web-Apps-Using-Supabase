@@ -16,7 +16,7 @@ export default function WithoutContextSample() {
   return (
     <>
       <div>
-        With <code className="inline">SessionContext</code>
+        With <code className="inline">SessionContextProvider</code>
       </div>
 
       <code data-label="Buckets">
