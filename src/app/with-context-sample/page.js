@@ -3,7 +3,7 @@
 import { useSupabaseClient } from "@supabase/auth-helpers-react";
 import { useEffect, useState } from "react";
 
-export default function WithoutContextSample() {
+export default function WithContextSample() {
   const supabase = useSupabaseClient();
   const [buckets, setBuckets] = useState(null);
 
