@@ -3,7 +3,7 @@ import { createServerActionClient } from "@supabase/auth-helpers-nextjs";
 
 export const dynamic = "force-dynamic";
 
-export default function Page() {
+export default function PageWithServerAction() {
   async function serverActionWithSupabase() {
     "use server";
 
