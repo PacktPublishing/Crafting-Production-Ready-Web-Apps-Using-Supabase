@@ -100,3 +100,17 @@ a.highlight {
     background-color: rgba(255, 255, 0, 0.2);
   }
 }
+
+button {
+  border: none;
+  background-color: rgba(255, 255, 255, 0.05);
+  cursor: pointer;
+  padding: 0.5rem 1rem;
+  border-radius: var(--border-radius);
+  border: 1px solid rgba(255, 255, 255, 0.1);
+  transition: background-color 0.2s ease-in-out;
+
+  &:hover {
+    background-color: rgba(255, 255, 255, 0.1);
+  }
+}
