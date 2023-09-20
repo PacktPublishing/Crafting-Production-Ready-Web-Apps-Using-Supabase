@@ -1,7 +1,6 @@
 "use client";
 
 import { useSupabaseClient } from "@supabase/auth-helpers-react";
-import { createClientComponentClient } from "@supabase/auth-helpers-nextjs";
 import { useEffect, useState } from "react";
 
 export default function WithoutContextSample() {
