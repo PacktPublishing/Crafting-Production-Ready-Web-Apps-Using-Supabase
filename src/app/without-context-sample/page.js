@@ -15,9 +15,9 @@ export default function WithoutContextSample() {
 
   return (
     <>
-      <div>
+      <h2>
         Without <code className="inline">Context</code> Sample
-      </div>
+      </h2>
 
       <code data-label="Buckets">
         <pre>

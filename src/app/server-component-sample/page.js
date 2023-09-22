@@ -9,7 +9,7 @@ export default async function ServerOnlyPageWithSupabase() {
 
   return (
     <>
-      <div>Server Only (Server Component)</div>
+      <h2>Server Only (Server Component)</h2>
 
       <code data-label="Buckets">
         <pre>

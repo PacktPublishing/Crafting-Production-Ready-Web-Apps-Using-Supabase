@@ -15,9 +15,9 @@ export default function WithContextSample() {
 
   return (
     <>
-      <div>
+      <h2>
         With <code className="inline">SessionContextProvider</code>
-      </div>
+      </h2>
 
       <code data-label="Buckets">
         <pre>
