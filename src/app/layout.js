@@ -1,11 +1,8 @@
 import "@/styles/globals.scss";
 import SupabaseProvider from "./SupabaseProvider";
 
-export default function RootLayout({
-  // Layouts must accept a children prop.
-  // This will be populated with nested layouts or pages
-  children,
-}) {
+export default function RootLayout(pageProps) {
+  console.log("@pageProps", pageProps);
   return (
     <html lang="en">
       <head>
@@ -14,7 +11,7 @@ export default function RootLayout({
       </head>
       <body>
         <SupabaseProvider>
-          <main>{children}</main>
+          <main>{pageProps.children}</main>
         </SupabaseProvider>
       </body>
     </html>
