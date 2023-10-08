@@ -1,8 +1,7 @@
-import Head from "next/head";
-import { Inter } from "next/font/google";
-import { createSupabase } from "@/supabase-client"; // Manual Variant
-import { useEffect, useState } from "react";
 import { useSupabaseClient } from "@supabase/auth-helpers-react";
+import { Inter } from "next/font/google";
+import Head from "next/head";
+import { useEffect, useState } from "react";
 
 const inter = Inter({ subsets: ["latin"] });
 
@@ -21,7 +20,9 @@ export default function Home() {
   const [buckets, setBuckets] = useState(null);
 
   useEffect(() => {
-    console.log(supabase);
+    supabase.auth.getSession().then((result) => {
+      console.log("Session", result);
+    });
 
     supabase.storage.listBuckets().then((result) => {
       console.log("Bucket List", result);

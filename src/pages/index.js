@@ -1,9 +1,8 @@
-import Head from "next/head";
-import { Inter } from "next/font/google";
-import { createSupabase } from "@/supabase-client"; // Manual Variant
-import { useEffect } from "react";
 import { useSupabaseClient } from "@supabase/auth-helpers-react";
+import { Inter } from "next/font/google";
+import Head from "next/head";
 import Link from "next/link";
+import { useEffect } from "react";
 
 const inter = Inter({ subsets: ["latin"] });
 
@@ -20,8 +19,6 @@ export default function Home() {
   // Context-based Variant:
   const supabase = useSupabaseClient();
   useEffect(() => {
-    console.log(supabase);
-
     supabase.storage.listBuckets().then((result) => {
       console.log("Bucket List", result);
     });

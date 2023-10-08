@@ -1,4 +1,5 @@
-import { createPagesServerClient } from "@supabase/auth-helpers-nextjs";
+import { createServerSupabase } from "@/supabase-utils/client";
+import { createReqResSupabase } from "@/supabase-utils/reqResClient";
 import Head from "next/head";
 
 const PageWithServerClient = ({ buckets }) => {
@@ -22,8 +23,7 @@ const PageWithServerClient = ({ buckets }) => {
 export default PageWithServerClient;
 
 export const getServerSideProps = async ({ req, res }) => {
-  const supabase = createPagesServerClient({ req, res });
-
+  const supabase = createReqResSupabase({ req, res });
   const bucketsTestCall = await supabase.storage.listBuckets();
 
   return {
