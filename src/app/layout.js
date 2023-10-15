@@ -14,7 +14,7 @@ export default async function RootLayout(pageProps) {
       </head>
       <body>
         <SupabaseProvider>
-          <main>{pageProps.children}</main>
+          <main className="container">{pageProps.children}</main>
         </SupabaseProvider>
       </body>
     </html>
