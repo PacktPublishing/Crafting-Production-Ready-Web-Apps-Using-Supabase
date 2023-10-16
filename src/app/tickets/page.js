@@ -1,3 +1,3 @@
 export default function TicketList() {
-  return <div>Ticket List HERE</div>;
+  return <div>Ticket List should go here</div>;
 }
