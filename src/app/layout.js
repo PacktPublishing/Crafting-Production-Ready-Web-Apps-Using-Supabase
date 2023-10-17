@@ -3,7 +3,7 @@ import SupabaseProvider from "./SupabaseProvider";
 
 export default async function RootLayout(pageProps) {
   return (
-    <html lang="en" data-theme="light">
+    <html lang="en">
       <head>
         {/* ... */}
         <meta name="viewport" content="width=device-width, initial-scale=1" />
