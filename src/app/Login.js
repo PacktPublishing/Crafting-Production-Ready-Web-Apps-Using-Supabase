@@ -9,7 +9,14 @@ export const Login = () => {
   return (
     <form
       onSubmit={(event) => {
-        alert("User wants to sign in");
+        event.preventDefault();
+        const signInWithPassword = switchLoginRef.current.checked;
+
+        if (signInWithPassword) {
+          alert("Sign in with password");
+        } else {
+          alert("Sign in with E-Mail");
+        }
       }}
     >
       <article style={{ maxWidth: "480px", margin: "auto" }}>
