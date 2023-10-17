@@ -7,7 +7,11 @@ export const Login = () => {
   const switchLoginRef = useRef(null);
 
   return (
-    <form>
+    <form
+      onSubmit={(event) => {
+        alert("User wants to sign in");
+      }}
+    >
       <article style={{ maxWidth: "480px", margin: "auto" }}>
         <header>Login</header>
 
@@ -43,14 +47,7 @@ export const Login = () => {
           </label>
         </fieldset>
 
-        <button
-          type="submit"
-          onClick={() => {
-            alert("User wants to sign in");
-          }}
-        >
-          Sign in
-        </button>
+        <button type="submit">Sign in</button>
       </article>
     </form>
   );
