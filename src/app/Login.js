@@ -16,11 +16,11 @@ export const Login = () => {
         <header>Login</header>
 
         <fieldset>
-          <label for="email">
+          <label htmlFor="email">
             Email <input ref={emailInputRef} type="email" id="email" required />
           </label>
 
-          <label for="password">
+          <label htmlFor="password">
             Password{" "}
             <input
               ref={passwordInputRef}
@@ -32,7 +32,7 @@ export const Login = () => {
         </fieldset>
 
         <fieldset>
-          <label for="switch-login">
+          <label htmlFor="switch-login">
             <input
               ref={switchLoginRef}
               type="checkbox"
