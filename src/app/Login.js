@@ -1,10 +1,15 @@
 "use client";
+import { useSupabaseClient } from "@supabase/auth-helpers-react";
+import { useRouter } from "next/navigation";
 import { useRef } from "react";
 
 export const Login = () => {
   const emailInputRef = useRef(null);
   const passwordInputRef = useRef(null);
   const switchLoginRef = useRef(null);
+
+  const supabase = useSupabaseClient();
+  const router = useRouter();
 
   return (
     <form
@@ -13,7 +18,18 @@ export const Login = () => {
         const signInWithPassword = switchLoginRef.current.checked;
 
         if (signInWithPassword) {
-          alert("Sign in with password");
+          supabase.auth
+            .signInWithPassword({
+              email: emailInputRef.current.value,
+              password: passwordInputRef.current.value,
+            })
+            .then((result) => {
+              if (result.data?.user) {
+                router.push("/tickets");
+              } else {
+                alert("Could not sign in");
+              }
+            });
         } else {
           alert("Sign in with E-Mail");
         }
