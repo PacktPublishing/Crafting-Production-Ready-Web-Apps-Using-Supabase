@@ -1,11 +1,14 @@
 "use client";
+import { useSupabaseClient } from "@supabase/auth-helpers-react";
 import Link from "next/link";
-import { usePathname } from "next/navigation";
+import { usePathname, useRouter } from "next/navigation";
 
 export default function Nav() {
   const pathname = usePathname();
   const activeLinkProps = { className: "contrast" };
   const inactiveLinkProps = { className: "secondary outline" };
+  const supabase = useSupabaseClient();
+  const router = useRouter();
 
   return (
     <nav>
@@ -40,6 +43,22 @@ export default function Nav() {
           >
             User List
           </Link>
+        </li>
+      </ul>
+      <ul>
+        <li>
+          <button
+            role="button"
+            className="outline"
+            onClick={(event) => {
+              // supabase.auth.signOut().then(() => {
+              //   router.push("/");
+              // });
+              supabase.auth.signOut();
+            }}
+          >
+            Log out
+          </button>
         </li>
       </ul>
     </nav>
