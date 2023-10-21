@@ -2,6 +2,7 @@
 import { useSupabaseClient } from "@supabase/auth-helpers-react";
 import Link from "next/link";
 import { usePathname, useRouter } from "next/navigation";
+import { useEffect } from "react";
 
 export default function Nav() {
   const pathname = usePathname();
@@ -9,6 +10,19 @@ export default function Nav() {
   const inactiveLinkProps = { className: "secondary outline" };
   const supabase = useSupabaseClient();
   const router = useRouter();
+
+  useEffect(() => {
+    const {
+      data: { subscription },
+    } = supabase.auth.onAuthStateChange((event, session) => {
+      if (event === "SIGNED_OUT") {
+        console.log("SIGNED_OUT");
+        router.push("/");
+      }
+    });
+
+    return () => subscription.unsubscribe();
+  }, []);
 
   return (
     <nav>
