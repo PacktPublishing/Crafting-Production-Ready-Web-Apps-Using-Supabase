@@ -6,41 +6,49 @@ import { useRef } from "react";
 export const Login = () => {
   const emailInputRef = useRef(null);
   const passwordInputRef = useRef(null);
-  const switchLoginRef = useRef(null);
 
   const supabase = useSupabaseClient();
   const router = useRouter();
 
   return (
-    <form
-      onSubmit={(event) => {
-        event.preventDefault();
-        const signInWithPassword = switchLoginRef.current.checked;
+    <article style={{ maxWidth: "480px", margin: "auto" }}>
+      <header>Login</header>
+      <form
+        method="post"
+        onSubmit={(event) => {
+          event.preventDefault();
+          const submitter = event.nativeEvent.submitter;
+          const submitterAction = submitter.getAttribute("formAction");
+          const signInWithPassword = submitterAction === "/auth/pw-login";
 
-        if (signInWithPassword) {
-          supabase.auth
-            .signInWithPassword({
-              email: emailInputRef.current.value,
-              password: passwordInputRef.current.value,
-            })
-            .then((result) => {
-              if (result.data?.user) {
-                router.push("/tickets");
-              } else {
-                alert("Could not sign in");
-              }
-            });
-        } else {
-          alert("Sign in with E-Mail");
-        }
-      }}
-    >
-      <article style={{ maxWidth: "480px", margin: "auto" }}>
-        <header>Login</header>
-
+          if (signInWithPassword) {
+            supabase.auth
+              .signInWithPassword({
+                email: emailInputRef.current.value,
+                password: passwordInputRef.current.value,
+              })
+              .then((result) => {
+                if (result.data?.user) {
+                  router.push("/tickets");
+                } else {
+                  alert("Could not sign in");
+                }
+              });
+          } else {
+            alert("Wants to log in with Magic Link");
+          }
+        }}
+      >
         <fieldset>
           <label htmlFor="email">
-            Email <input ref={emailInputRef} type="email" id="email" required />
+            Email{" "}
+            <input
+              ref={emailInputRef}
+              name="email"
+              type="email"
+              id="email"
+              required
+            />
           </label>
 
           <label htmlFor="password">
@@ -48,30 +56,20 @@ export const Login = () => {
             <input
               ref={passwordInputRef}
               type="password"
+              name="password"
               id="password"
-              hidden
             />
           </label>
         </fieldset>
 
-        <fieldset>
-          <label htmlFor="switch-login">
-            <input
-              ref={switchLoginRef}
-              type="checkbox"
-              id="switch-login"
-              role="switch"
-              onChange={() => {
-                const checked = switchLoginRef.current.checked;
-                passwordInputRef.current.hidden = !checked;
-              }}
-            />
-            Sign in with password
-          </label>
-        </fieldset>
+        <button type="submit" formAction="/auth/pw-login">
+          Sign in with Password
+        </button>
 
-        <button type="submit">Sign in</button>
-      </article>
-    </form>
+        <button type="submit" formAction="/auth/magic">
+          Sign in with Magic Link
+        </button>
+      </form>
+    </article>
   );
 };
