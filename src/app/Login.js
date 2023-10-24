@@ -1,7 +1,7 @@
 "use client";
 import { useSupabaseClient } from "@supabase/auth-helpers-react";
 import { useRouter } from "next/navigation";
-import { useRef } from "react";
+import { useEffect, useRef } from "react";
 
 export const Login = () => {
   const emailInputRef = useRef(null);
@@ -10,18 +10,30 @@ export const Login = () => {
   const supabase = useSupabaseClient();
   const router = useRouter();
 
+  useEffect(() => {
+    const {
+      data: { subscription },
+    } = supabase.auth.onAuthStateChange((event, session) => {
+      if (event === "SIGNED_IN") {
+        router.push("/tickets");
+      }
+    });
+
+    return () => subscription.unsubscribe();
+  }, []);
+
   return (
     <article style={{ maxWidth: "480px", margin: "auto" }}>
       <header>Login</header>
       <form
         method="post"
         onSubmit={(event) => {
-          event.preventDefault();
           const submitter = event.nativeEvent.submitter;
           const submitterAction = submitter.getAttribute("formAction");
           const signInWithPassword = submitterAction === "/auth/pw-login";
 
           if (signInWithPassword) {
+            event.preventDefault();
             supabase.auth
               .signInWithPassword({
                 email: emailInputRef.current.value,
@@ -34,8 +46,6 @@ export const Login = () => {
                   alert("Could not sign in");
                 }
               });
-          } else {
-            alert("Wants to log in with Magic Link");
           }
         }}
       >
