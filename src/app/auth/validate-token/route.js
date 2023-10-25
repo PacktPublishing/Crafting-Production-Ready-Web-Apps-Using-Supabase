@@ -6,6 +6,7 @@ import { NextResponse } from "next/server";
 export async function GET(request) {
   const { searchParams } = new URL(request.url);
   const token = searchParams.get("token");
+
   const supabase = createRouteHandlerClient({ cookies });
 
   const { error } = await supabase.auth.verifyOtp({
@@ -16,6 +17,13 @@ export async function GET(request) {
   if (error) {
     return NextResponse.json({ error: "Sorry, link is invalid" });
   } else {
-    return NextResponse.redirect(new URL("/tickets", request.url));
+    const type = searchParams.get("type");
+    if (type === "recovery") {
+      return NextResponse.redirect(
+        new URL("/tickets/reset-password", request.url)
+      );
+    } else {
+      return NextResponse.redirect(new URL("/tickets", request.url));
+    }
   }
 }

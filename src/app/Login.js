@@ -61,6 +61,15 @@ export const Login = () => {
             />
           </label>
 
+          <button
+            type="submit"
+            formAction="/auth/password-recovery"
+            className="secondary"
+            style={{ padding: "7px", fontSize: "0.84em" }}
+          >
+            Request password recovery
+          </button>
+
           <label htmlFor="password">
             Password{" "}
             <input
