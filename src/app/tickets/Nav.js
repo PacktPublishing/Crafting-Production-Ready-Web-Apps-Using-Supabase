@@ -60,18 +60,22 @@ export default function Nav() {
       </ul>
       <ul>
         <li>
-          <button
+          <Link
+            href="/auth/logout"
             role="button"
             className="outline"
             onClick={(event) => {
+              // the following code is commented out because it is not needed
+              // as we are listening to the SIGNED_OUT event above
               // supabase.auth.signOut().then(() => {
               //   router.push("/");
               // });
+              event.preventDefault();
               supabase.auth.signOut();
             }}
           >
             Log out
-          </button>
+          </Link>
         </li>
       </ul>
     </nav>
