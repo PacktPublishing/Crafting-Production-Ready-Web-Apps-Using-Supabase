@@ -61,15 +61,6 @@ export const Login = () => {
             />
           </label>
 
-          <button
-            type="submit"
-            formAction="/auth/password-recovery"
-            className="secondary"
-            style={{ padding: "7px", fontSize: "0.84em" }}
-          >
-            Request password recovery
-          </button>
-
           <label htmlFor="password">
             Password{" "}
             <input
@@ -81,12 +72,29 @@ export const Login = () => {
           </label>
         </fieldset>
 
-        <button type="submit" formAction="/auth/pw-login">
+        <button
+          type="submit"
+          formAction="/auth/pw-login"
+          style={{ padding: "7px" }}
+        >
           Sign in with Password
         </button>
 
-        <button type="submit" formAction="/auth/magic">
+        <button
+          type="submit"
+          formAction="/auth/magic"
+          style={{ padding: "7px" }}
+        >
           Sign in with Magic Link
+        </button>
+
+        <button
+          type="submit"
+          formAction="/auth/password-recovery"
+          className="secondary"
+          style={{ padding: "7px", fontSize: "0.84em" }}
+        >
+          Request password recovery
         </button>
       </form>
     </article>

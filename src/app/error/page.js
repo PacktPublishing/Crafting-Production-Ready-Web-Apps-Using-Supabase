@@ -1,0 +1,37 @@
+import Link from "next/link";
+
+export default function Page({ searchParams }) {
+  const { type } = searchParams;
+  const knownErrors = ["recovery", "magiclink"];
+
+  return (
+    <div style={{ textAlign: "center" }}>
+      <h1>Ooops!</h1>
+      {type === "recovery" && (
+        <strong>
+          Could not send you a recovery mail. Maybe you had a typo in your
+          E-Mail?
+        </strong>
+      )}
+
+      {type === "magiclink" && (
+        <strong>
+          Could not send a magic link. Maybe you had a typo in your E-Mail?
+        </strong>
+      )}
+
+      {!knownErrors.includes(type) && (
+        <strong>
+          Something went wrong. Please try again or contact support.
+        </strong>
+      )}
+
+      <br />
+      <br />
+
+      <Link role="button" href="/">
+        Go back.
+      </Link>
+    </div>
+  );
+}
