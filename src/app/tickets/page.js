@@ -5,7 +5,7 @@ const TicketRow = ({ ticket }) => {
     <tr>
       <td>{ticket.id}</td>
       <td>
-        <Link href={`/tickets/${ticket.id}`}>{ticket.title}</Link>
+        <Link href={`/tickets/details/${ticket.id}`}>{ticket.title}</Link>
       </td>
     </tr>
   );
