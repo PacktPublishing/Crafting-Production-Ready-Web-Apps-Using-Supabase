@@ -6,12 +6,12 @@ export async function POST(request) {
   const formData = await request.formData();
   const email = formData.get("email");
 
-  const supabase = createClient(
+  const supabaseAdminClient = createClient(
     process.env.NEXT_PUBLIC_SUPABASE_URL,
     process.env.SUPABASE_SERVICE_ROLE_KEY
   );
 
-  const { data: linkData } = await supabase.auth.admin.generateLink({
+  const { data: linkData } = await supabaseAdminClient.auth.admin.generateLink({
     email,
     type: "magiclink",
   });
