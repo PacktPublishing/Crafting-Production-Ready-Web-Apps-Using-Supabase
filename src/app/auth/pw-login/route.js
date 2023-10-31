@@ -15,7 +15,6 @@ export async function POST(request) {
     password,
   });
 
-  console.log("Signed in?", requestUrl.origin);
   return NextResponse.redirect(requestUrl.origin, {
     status: 301,
   });

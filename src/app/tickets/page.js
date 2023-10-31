@@ -19,8 +19,8 @@ export default function TicketList() {
   ];
 
   return (
-    <>
-      <h2>Ticket List</h2>
+    <section>
+      <strong>Ticket List</strong>
       <table>
         <thead>
           <tr>
@@ -34,6 +34,6 @@ export default function TicketList() {
           ))}
         </tbody>
       </table>
-    </>
+    </section>
   );
 }
