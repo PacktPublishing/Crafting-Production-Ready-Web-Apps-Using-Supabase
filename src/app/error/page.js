@@ -1,6 +1,6 @@
 import Link from "next/link";
 
-export default function Page({ searchParams }) {
+export default function ErrorPage({ searchParams }) {
   const { type } = searchParams;
   const knownErrors = ["login-failed", "recovery", "magiclink"];
 

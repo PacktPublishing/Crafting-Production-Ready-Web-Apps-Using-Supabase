@@ -1,6 +1,8 @@
+import { createRouteHandlerClient } from "@supabase/auth-helpers-nextjs";
 import { createClient } from "@supabase/supabase-js";
 import { NextResponse } from "next/server";
 import nodemailer from "nodemailer";
+import { cookies } from "next/headers";
 
 export async function POST(request) {
   const formData = await request.formData();
@@ -11,6 +13,9 @@ export async function POST(request) {
     process.env.SUPABASE_SERVICE_ROLE_KEY
   );
 
+  // ! State of October 2023: the generateLink will have built-in createUser=true
+  // ! Hopefully the option can be changed soon.
+  // ! Link: https://github.com/supabase/gotrue-js/issues/358
   const { data: linkData } = await supabaseAdminClient.auth.admin.generateLink({
     email,
     type: "magiclink",
