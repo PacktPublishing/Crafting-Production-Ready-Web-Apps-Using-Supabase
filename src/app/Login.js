@@ -33,19 +33,19 @@ export const Login = () => {
           const signInWithPassword = submitterAction === "/auth/pw-login";
 
           if (signInWithPassword) {
-            event.preventDefault();
-            supabase.auth
-              .signInWithPassword({
-                email: emailInputRef.current.value,
-                password: passwordInputRef.current.value,
-              })
-              .then((result) => {
-                if (result.data?.user) {
-                  router.push("/tickets");
-                } else {
-                  alert("Could not sign in");
-                }
-              });
+            // event.preventDefault();
+            // supabase.auth
+            //   .signInWithPassword({
+            //     email: emailInputRef.current.value,
+            //     password: passwordInputRef.current.value,
+            //   })
+            //   .then((result) => {
+            //     if (result.data?.user) {
+            //       router.push("/tickets");
+            //     } else {
+            //       alert("Could not sign in");
+            //     }
+            //   });
           }
         }}
       >
