@@ -2,11 +2,15 @@ import Link from "next/link";
 
 export default function Page({ searchParams }) {
   const { type } = searchParams;
-  const knownErrors = ["recovery", "magiclink"];
+  const knownErrors = ["login-failed", "recovery", "magiclink"];
 
   return (
     <div style={{ textAlign: "center" }}>
       <h1>Ooops!</h1>
+      {type === "login-failed" && (
+        <strong>Login was not successfull, sorry.</strong>
+      )}
+
       {type === "recovery" && (
         <strong>
           Could not send you a recovery mail. Maybe you had a typo in your
