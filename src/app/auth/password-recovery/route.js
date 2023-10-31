@@ -40,7 +40,7 @@ export async function POST(request) {
     });
 
     return NextResponse.redirect(
-      new URL("/thanks?type=recovery", request.url),
+      new URL("/magic-thanks?type=recovery", request.url),
       {
         status: 302,
       }
