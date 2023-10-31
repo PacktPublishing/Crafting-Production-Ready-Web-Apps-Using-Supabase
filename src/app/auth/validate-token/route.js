@@ -14,7 +14,9 @@ export async function GET(request) {
   });
 
   if (error) {
-    return NextResponse.json({ error: "Sorry, link is invalid" });
+    return NextResponse.redirect(
+      new URL("/error?type=invalid_magiclink", request.url)
+    );
   } else {
     const type = searchParams.get("type");
     if (type === "recovery") {
