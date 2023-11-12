@@ -11,7 +11,7 @@ export default function Page() {
       <ul>
         <li>
           <Link className="highlight" href="/client-component-sample">
-            Page with <strong>React Helpers</strong> usage
+            Page with <strong>Client Component</strong> usage
           </Link>
         </li>
         <li>
