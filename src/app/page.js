@@ -10,13 +10,8 @@ export default function Page() {
       <h1>Hello App Page</h1>
       <ul>
         <li>
-          <Link className="highlight" href="/with-context-sample">
+          <Link className="highlight" href="/client-component-sample">
             Page with <strong>React Helpers</strong> usage
-          </Link>
-        </li>
-        <li>
-          <Link className="highlight" href="/without-context-sample">
-            Page without <strong>React Helpers</strong>
           </Link>
         </li>
         <li>

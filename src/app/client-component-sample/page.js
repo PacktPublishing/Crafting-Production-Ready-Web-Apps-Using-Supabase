@@ -1,9 +1,9 @@
 "use client";
 
-import { useSupabaseClient } from "@supabase/auth-helpers-react";
+import { useSupabaseClient } from "@/supabase-utils/client";
 import { useEffect, useState } from "react";
 
-export default function WithContextSample() {
+export default function ClientComponentSample() {
   const supabase = useSupabaseClient();
   const [buckets, setBuckets] = useState(null);
 
@@ -16,7 +16,7 @@ export default function WithContextSample() {
   return (
     <>
       <h2>
-        With <code className="inline">SessionContextProvider</code>
+        With <code className="inline">Client Component</code>
       </h2>
 
       <code data-label="Buckets">

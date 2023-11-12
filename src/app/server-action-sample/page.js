@@ -1,5 +1,4 @@
-import { cookies } from "next/headers";
-import { createServerActionClient } from "@supabase/auth-helpers-nextjs";
+import { createCookiesSupabase } from "@/supabase-utils/cookiesClient";
 
 export const dynamic = "force-dynamic";
 
@@ -7,7 +6,7 @@ export default function PageWithServerAction() {
   async function serverActionWithSupabase() {
     "use server";
 
-    const supabase = createServerActionClient({ cookies });
+    const supabase = createCookiesSupabase();
     const buckets = await supabase.storage.listBuckets();
 
     console.log("@server", buckets);
