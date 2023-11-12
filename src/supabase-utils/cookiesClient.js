@@ -7,9 +7,11 @@ export const createCookiesSupabase = () => {
     process.env.SUPABASE_SERVICE_ROLE_KEY,
     {
       cookies: {
-        get: (name) => cookies.get(name),
-        set: (name, value, options) => cookies.set(name, value, { ...options }),
-        remove: (name, options) => cookies.remove(name, { ...options }),
+        get: (name) => cookies().get(name)?.value,
+        set: (name, value, options) =>
+          cookies().set({ name, value, ...options }),
+        remove: (name, options) =>
+          cookies().set({ name, value: "", ...options }),
       },
     }
   );

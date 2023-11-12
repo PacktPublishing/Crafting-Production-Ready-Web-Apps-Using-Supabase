@@ -6,6 +6,8 @@ export default async function ServerOnlyPageWithSupabase() {
   const supabase = createCookiesSupabase();
   const buckets = await supabase.storage.listBuckets();
 
+  // const buckets = [];
+
   return (
     <>
       <h2>Server Only (Server Component)</h2>
