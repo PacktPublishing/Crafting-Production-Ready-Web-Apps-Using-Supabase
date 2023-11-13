@@ -1,9 +1,9 @@
-import { createCookiesSupabase } from "@/supabase-utils/cookiesClient";
+import { createCookiesUtilSupabase } from "@/supabase-utils/cookiesUtilClient";
 
 export const dynamic = "force-dynamic";
 
 export default async function ServerOnlyPageWithSupabase() {
-  const supabase = createCookiesSupabase();
+  const supabase = createCookiesUtilSupabase();
   const buckets = await supabase.storage.listBuckets();
 
   // const buckets = [];
