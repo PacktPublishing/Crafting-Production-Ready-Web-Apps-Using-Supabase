@@ -1,12 +1,12 @@
 import { createCookiesUtilSupabase } from "@/supabase-utils/cookiesUtilClient";
 
+// force-dynamic is not needed when dynamic functions like cookies()
+// are called. But i kept it for clarity.
 export const dynamic = "force-dynamic";
 
 export default async function ServerOnlyPageWithSupabase() {
   const supabase = createCookiesUtilSupabase();
   const buckets = await supabase.storage.listBuckets();
-
-  // const buckets = [];
 
   return (
     <>
