@@ -4,8 +4,6 @@ import { NextResponse } from "next/server";
 export async function middleware(req) {
   const res = NextResponse.next();
   const supabase = createReqResSupabase({ req, res });
-  await supabase.auth.getSession();
-
   // do something with supabase
 
   return res;
