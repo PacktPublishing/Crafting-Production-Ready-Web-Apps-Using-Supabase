@@ -1,13 +1,13 @@
 "use client";
 
-import { createSupabaseFrontendClient } from "@/supabase-utils/client";
+import { getSupabaseFrontendClient } from "@/supabase-utils/client";
 import { useEffect, useState } from "react";
 
 export default function ClientComponentSample() {
-  const supabase = createSupabaseFrontendClient();
   const [buckets, setBuckets] = useState(null);
 
   useEffect(() => {
+    const supabase = getSupabaseFrontendClient();
     supabase.storage.listBuckets().then((result) => {
       setBuckets(result);
     });
