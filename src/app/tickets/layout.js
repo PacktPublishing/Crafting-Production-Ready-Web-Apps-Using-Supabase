@@ -1,5 +1,5 @@
-import TenantName from "./TenantName";
 import Nav from "./Nav";
+import TenantName from "./TenantName";
 
 export default function TicketsLayout(pageProps) {
   return (
