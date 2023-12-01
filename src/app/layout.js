@@ -1,5 +1,4 @@
 import "@/styles/globals.scss";
-import SupabaseProvider from "./SupabaseProvider";
 
 export default async function RootLayout(pageProps) {
   return (
@@ -13,9 +12,7 @@ export default async function RootLayout(pageProps) {
         ></link>
       </head>
       <body>
-        <SupabaseProvider>
-          <main className="container">{pageProps.children}</main>
-        </SupabaseProvider>
+        <main className="container">{pageProps.children}</main>
       </body>
     </html>
   );
