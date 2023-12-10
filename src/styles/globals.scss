@@ -10,6 +10,10 @@
   box-sizing: border-box;
   padding: 0;
   margin: 0;
+
+  &:last-child {
+    margin-bottom: 0 !important;
+  }
 }
 
 html {
@@ -125,11 +129,25 @@ article > header {
   --block-spacing-vertical: calc(2.4 * var(--spacing));
 }
 
+article article {
+  background-color: color-mix(
+    in srgb,
+    var(--card-background-color) 10%,
+    rgba(70, 56, 70, 0.246)
+  );
+}
+
 h1,
 h2,
 h3,
 h4,
 h5,
 h6 {
-  margin-bottom: 0.9em !important;
+  &:not(:last-child) {
+    margin-bottom: 0.9em !important;
+  }
+
+  &:last-child {
+    margin-bottom: 0 !important;
+  }
 }
