@@ -42,6 +42,18 @@ export default function Nav() {
           </Link>
         </li>
       </ul>
+
+      <ul>
+        <li>
+          <Link
+            role="button"
+            href="/logout"
+            // className="secondary"
+          >
+            Log out
+          </Link>
+        </li>
+      </ul>
     </nav>
   );
 }

@@ -1,15 +1,20 @@
 "use client";
-import { useRef } from "react";
+import { useRef, useState } from "react";
 
 export const Login = () => {
   const emailInputRef = useRef(null);
   const passwordInputRef = useRef(null);
-  const switchLoginRef = useRef(null);
+  const [isPasswordLogin, setIsPasswordLogin] = useState(false);
 
   return (
     <form
       onSubmit={(event) => {
-        alert("User wants to sign in");
+        event.preventDefault();
+        if (isPasswordLogin) {
+          alert("User wants to login with password");
+        } else {
+          alert("User wants to login with magic link");
+        }
       }}
     >
       <article style={{ maxWidth: "480px", margin: "auto" }}>
@@ -26,7 +31,7 @@ export const Login = () => {
               ref={passwordInputRef}
               type="password"
               id="password"
-              hidden
+              hidden={!isPasswordLogin}
             />
           </label>
         </fieldset>
@@ -34,20 +39,21 @@ export const Login = () => {
         <fieldset>
           <label htmlFor="switch-login">
             <input
-              ref={switchLoginRef}
               type="checkbox"
               id="switch-login"
               role="switch"
-              onChange={() => {
-                const checked = switchLoginRef.current.checked;
-                passwordInputRef.current.hidden = !checked;
+              onChange={(evt) => {
+                setIsPasswordLogin(evt.target.checked);
               }}
             />
             Sign in with password
           </label>
         </fieldset>
 
-        <button type="submit">Sign in</button>
+        <button type="submit">
+          Sign in with
+          {isPasswordLogin ? " Password" : " Magic Link"}
+        </button>
       </article>
     </form>
   );

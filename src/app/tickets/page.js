@@ -1,39 +1,31 @@
-import Link from "next/link";
+import { TicketList } from "./TicketList";
 
-const TicketRow = ({ ticket }) => {
-  return (
-    <tr>
-      <td>{ticket.id}</td>
-      <td>
-        <Link href={`/tickets/${ticket.id}`}>{ticket.title}</Link>
-      </td>
-    </tr>
-  );
-};
+const dummyTickets = [
+  {
+    id: 1,
+    title: "Write Supabase Book",
+    status: "Not started",
+    author: "Chayan",
+  },
+  {
+    id: 2,
+    title: "Read more Packt Books",
+    status: "In progress",
+    author: "David",
+  },
+  {
+    id: 3,
+    title: "Make videos for the YouTube Channel",
+    status: "Done",
+    author: "David",
+  },
+];
 
-export default function TicketList() {
-  const dummyTickets = [
-    { id: 1, title: "Write Supabase Book" },
-    { id: 2, title: "Read more Packt Books" },
-    { id: 3, title: "Make videos for the YouTube Channel" },
-  ];
-
+export default function TicketListPage() {
   return (
     <>
       <h2>Ticket List</h2>
-      <table>
-        <thead>
-          <tr>
-            <th>ID</th>
-            <th>Title</th>
-          </tr>
-        </thead>
-        <tbody>
-          {dummyTickets.map((ticket) => (
-            <TicketRow key={ticket.id} ticket={ticket} />
-          ))}
-        </tbody>
-      </table>
+      <TicketList tickets={dummyTickets} />
     </>
   );
 }
