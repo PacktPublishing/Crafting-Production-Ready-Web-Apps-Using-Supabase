@@ -4,15 +4,16 @@ import { usePathname } from "next/navigation";
 
 export default function Nav() {
   const pathname = usePathname();
-  const activeLinkProps = { className: "contrast" };
+  const activeLinkProps = { className: "contrast btn" };
   const inactiveLinkProps = { className: "secondary outline" };
 
   return (
     <nav>
-      <ul>
+      <ul className="menu">
         <li>
           <Link
             role="button"
+            className="btn"
             href="/tickets"
             {...(pathname === "/tickets" ? activeLinkProps : inactiveLinkProps)}
           >

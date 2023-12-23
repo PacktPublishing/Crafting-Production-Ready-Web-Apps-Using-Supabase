@@ -1,0 +1,35 @@
+.ticketStatusGreen {
+  color: greenyellow;
+}
+
+.authorAndDate {
+  color: var(--secondary);
+}
+.authorAndDate strong {
+  color: var(--contrast);
+}
+
+.ticketDetails {
+  border: 1px solid #3c5c60;
+}
+.ticketDetails > header {
+  border-bottom: 1px solid #244538;
+}
+
+.comment {
+  --color-card-brighter: color-mix(
+    in srgb,
+    var(--card-background-color),
+    var(--secondary) 20%
+  );
+  margin: 0;
+  padding: 0.7em 1em 0.7em;
+  background-color: var(--color-card-brighter);
+}
+.comment:not(:last-child) {
+  margin-bottom: 5px;
+}
+.comment time {
+  color: var(--secondary);
+  padding-left: 0.5em;
+}

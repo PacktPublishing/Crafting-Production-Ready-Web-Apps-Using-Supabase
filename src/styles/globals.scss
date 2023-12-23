@@ -11,7 +11,7 @@
   padding: 0;
   margin: 0;
 
-  &:last-child {
+  &:last-child:not(footer) {
     margin-bottom: 0 !important;
   }
 }
@@ -125,16 +125,9 @@ button {
 
 // pico css changes
 article,
-article > header {
+article > header,
+article > footer {
   --block-spacing-vertical: calc(2.4 * var(--spacing));
-}
-
-article article {
-  background-color: color-mix(
-    in srgb,
-    var(--card-background-color) 10%,
-    rgba(70, 56, 70, 0.246)
-  );
 }
 
 h1,
