@@ -1,39 +1,5 @@
+import { TicketComments } from "./TicketComments";
 import classes from "./TicketDetails.module.css";
-
-function TicketComments() {
-  const comments = [
-    {
-      author: "Dave",
-      date: "2027-01-01",
-      content: "This is a comment from Dave",
-    },
-    {
-      author: "Alice",
-      date: "2027-01-02",
-      content: "This is a comment from Alice",
-    },
-  ];
-
-  return (
-    <footer>
-      <h4>Comments</h4>
-
-      <textarea placeholder="Add a comment"></textarea>
-      <button>Add comment</button>
-
-      {/* <section>We have {comments.length} comments.</section> */}
-      <section>
-        {comments.map((comment) => (
-          <article key={comment.date} className={classes.comment}>
-            <strong>{comment.author} </strong>
-            <time>{comment.date}</time>
-            <p>{comment.content}</p>
-          </article>
-        ))}
-      </section>
-    </footer>
-  );
-}
 
 export default function TicketDetailsPage({ params }) {
   return (
