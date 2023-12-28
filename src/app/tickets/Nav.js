@@ -4,18 +4,17 @@ import { usePathname } from "next/navigation";
 
 export default function Nav() {
   const pathname = usePathname();
-  const activeLinkProps = { className: "contrast btn" };
-  const inactiveLinkProps = { className: "secondary outline" };
+  const activeProps = { className: "contrast" };
+  const inactiveProps = { className: "secondary outline" };
 
   return (
     <nav>
-      <ul className="menu">
+      <ul>
         <li>
           <Link
             role="button"
-            className="btn"
             href="/tickets"
-            {...(pathname === "/tickets" ? activeLinkProps : inactiveLinkProps)}
+            {...(pathname === "/tickets" ? activeProps : inactiveProps)}
           >
             Ticket List
           </Link>
@@ -24,20 +23,16 @@ export default function Nav() {
           <Link
             role="button"
             href="/tickets/new"
-            {...(pathname === "/tickets/new"
-              ? activeLinkProps
-              : inactiveLinkProps)}
+            {...(pathname === "/tickets/new" ? activeProps : inactiveProps)}
           >
-            Create new Ticket
+            Create New Ticket
           </Link>
         </li>
         <li>
           <Link
             role="button"
             href="/tickets/users"
-            {...(pathname === "/tickets/users"
-              ? activeLinkProps
-              : inactiveLinkProps)}
+            {...(pathname === "/tickets/users" ? activeProps : inactiveProps)}
           >
             User List
           </Link>
@@ -46,11 +41,7 @@ export default function Nav() {
 
       <ul>
         <li>
-          <Link
-            role="button"
-            href="/logout"
-            // className="secondary"
-          >
+          <Link role="button" href="/logout" className="secondary">
             Log out
           </Link>
         </li>

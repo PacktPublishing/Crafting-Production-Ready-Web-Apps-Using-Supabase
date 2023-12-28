@@ -11,6 +11,7 @@
   "dependencies": {
     "@supabase/ssr": "^0.0.10",
     "@supabase/supabase-js": "^2.33.2",
+    "@tabler/icons-react": "^2.44.0",
     "cookies-next": "^4.0.0",
     "eslint": "8.48.0",
     "eslint-config-next": "13.4.19",

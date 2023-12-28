@@ -2,20 +2,21 @@
 import { useRef } from "react";
 import classes from "./TicketDetails.module.css";
 
+const comments = [
+  {
+    author: "Dave",
+    date: "2027-01-01",
+    content: "This is a comment from Dave",
+  },
+  {
+    author: "Alice",
+    date: "2027-01-02",
+    content: "This is a comment from Alice",
+  },
+];
+
 export function TicketComments() {
   const commentRef = useRef(null);
-  const comments = [
-    {
-      author: "Dave",
-      date: "2027-01-01",
-      content: "This is a comment from Dave",
-    },
-    {
-      author: "Alice",
-      date: "2027-01-02",
-      content: "This is a comment from Alice",
-    },
-  ];
 
   return (
     <footer>
