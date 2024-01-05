@@ -1,5 +1,6 @@
 "use client";
 import { getSupabaseFrontendClient } from "@/supabase-utils/client";
+import { useRouter } from "next/navigation";
 import { useRef, useState } from "react";
 
 export const Login = () => {
@@ -7,6 +8,7 @@ export const Login = () => {
   const passwordInputRef = useRef(null);
   const [isPasswordLogin, setIsPasswordLogin] = useState(false);
   const supabase = getSupabaseFrontendClient();
+  const router = useRouter();
 
   return (
     <form
@@ -21,7 +23,7 @@ export const Login = () => {
             })
             .then((result) => {
               if (result.data?.user) {
-                alert("Signed in");
+                router.push("/tickets");
               } else {
                 alert("Could not sign in");
               }

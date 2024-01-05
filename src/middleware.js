@@ -3,7 +3,18 @@ import { NextResponse } from "next/server";
 
 export async function middleware(req) {
   const res = NextResponse.next();
+
   const supabase = createReqResSupabase({ req, res });
-  await supabase.auth.getSession();
+  const session = await supabase.auth.getSession();
+
+  const requestedPath = req.nextUrl.pathname;
+  const sessionUser = session?.data?.session?.user;
+
+  if (requestedPath.startsWith("/tickets")) {
+    if (!sessionUser) {
+      return NextResponse.redirect(new URL("/", req.url));
+    }
+  }
+
   return res;
 }
