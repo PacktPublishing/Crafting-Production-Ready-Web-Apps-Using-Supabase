@@ -1,19 +1,31 @@
 "use client";
+import { getSupabaseFrontendClient } from "@/supabase-utils/client";
 import { useRef, useState } from "react";
 
 export const Login = () => {
   const emailInputRef = useRef(null);
   const passwordInputRef = useRef(null);
   const [isPasswordLogin, setIsPasswordLogin] = useState(false);
+  const supabase = getSupabaseFrontendClient();
 
   return (
     <form
       onSubmit={(event) => {
         event.preventDefault();
+
         if (isPasswordLogin) {
-          alert("User wants to login with password");
-        } else {
-          alert("User wants to login with magic link");
+          supabase.auth
+            .signInWithPassword({
+              email: emailInputRef.current.value,
+              password: passwordInputRef.current.value,
+            })
+            .then((result) => {
+              if (result.data?.user) {
+                alert("Signed in");
+              } else {
+                alert("Could not sign in");
+              }
+            });
         }
       }}
     >
