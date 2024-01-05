@@ -27,5 +27,6 @@ export default function TicketListPage() {
       <h2>Ticket List</h2>
       <TicketList tickets={dummyTickets} />
     </>
+    // <div>Ticket List should go here</div>
   );
 }
