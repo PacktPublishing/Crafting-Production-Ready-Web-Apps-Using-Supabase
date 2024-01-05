@@ -14,6 +14,10 @@ export async function middleware(req) {
     if (!sessionUser) {
       return NextResponse.redirect(new URL("/", req.url));
     }
+  } else if (requestedPath === "/") {
+    if (sessionUser) {
+      return NextResponse.redirect(new URL("/tickets", req.url));
+    }
   }
 
   return res;
