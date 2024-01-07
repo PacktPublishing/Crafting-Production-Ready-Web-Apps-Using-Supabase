@@ -1,10 +1,10 @@
 "use client";
+import Link from "next/link";
 import { useRef, useState } from "react";
 
-export const Login = () => {
+export const Login = ({ isPasswordLogin }) => {
   const emailInputRef = useRef(null);
   const passwordInputRef = useRef(null);
-  const [isPasswordLogin, setIsPasswordLogin] = useState(false);
 
   return (
     <form
@@ -25,30 +25,35 @@ export const Login = () => {
             Email <input ref={emailInputRef} type="email" id="email" required />
           </label>
 
-          <label htmlFor="password">
-            Password{" "}
-            <input
-              ref={passwordInputRef}
-              type="password"
-              id="password"
-              hidden={!isPasswordLogin}
-            />
-          </label>
+          {isPasswordLogin && (
+            <label htmlFor="password">
+              Password{" "}
+              <input ref={passwordInputRef} type="password" id="password" />
+            </label>
+          )}
         </fieldset>
 
-        <fieldset>
-          <label htmlFor="switch-login">
-            <input
-              type="checkbox"
-              id="switch-login"
-              role="switch"
-              onChange={(evt) => {
-                setIsPasswordLogin(evt.target.checked);
+        <p>
+          {isPasswordLogin ? (
+            <Link
+              href={{
+                pathname: "/",
+                query: { magicLink: "yes" },
               }}
-            />
-            Sign in with password
-          </label>
-        </fieldset>
+            >
+              Go to Magic Link Login
+            </Link>
+          ) : (
+            <Link
+              href={{
+                pathname: "/",
+                query: { magicLink: "no" },
+              }}
+            >
+              Go to Password Login
+            </Link>
+          )}
+        </p>
 
         <button type="submit">
           Sign in with
