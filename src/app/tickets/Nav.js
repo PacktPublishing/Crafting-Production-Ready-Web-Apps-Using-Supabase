@@ -1,11 +1,27 @@
 "use client";
+import { getSupabaseFrontendClient } from "@/supabase-utils/client";
 import Link from "next/link";
-import { usePathname } from "next/navigation";
+import { usePathname, useRouter } from "next/navigation";
+import { useEffect } from "react";
 
 export default function Nav() {
   const pathname = usePathname();
   const activeProps = { className: "contrast" };
   const inactiveProps = { className: "secondary outline" };
+  const supabase = getSupabaseFrontendClient();
+  const router = useRouter();
+
+  useEffect(() => {
+    const {
+      data: { subscription },
+    } = supabase.auth.onAuthStateChange((event, session) => {
+      if (event === "SIGNED_OUT") {
+        router.push("/");
+      }
+    });
+
+    return () => subscription.unsubscribe();
+  }, []);
 
   return (
     <nav>
@@ -41,7 +57,15 @@ export default function Nav() {
 
       <ul>
         <li>
-          <Link role="button" href="/logout" className="secondary">
+          <Link
+            role="button"
+            href="/logout"
+            className="secondary"
+            onClick={(event) => {
+              event.preventDefault();
+              supabase.auth.signOut();
+            }}
+          >
             Log out
           </Link>
         </li>

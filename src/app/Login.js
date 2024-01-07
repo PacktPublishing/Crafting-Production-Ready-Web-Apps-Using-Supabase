@@ -1,12 +1,12 @@
 "use client";
 import { getSupabaseFrontendClient } from "@/supabase-utils/client";
+import Link from "next/link";
 import { useRouter } from "next/navigation";
 import { useRef, useState } from "react";
 
-export const Login = () => {
+export const Login = ({ isPasswordLogin }) => {
   const emailInputRef = useRef(null);
   const passwordInputRef = useRef(null);
-  const [isPasswordLogin, setIsPasswordLogin] = useState(false);
   const supabase = getSupabaseFrontendClient();
   const router = useRouter();
 
@@ -50,19 +50,27 @@ export const Login = () => {
           </label>
         </fieldset>
 
-        <fieldset>
-          <label htmlFor="switch-login">
-            <input
-              type="checkbox"
-              id="switch-login"
-              role="switch"
-              onChange={(evt) => {
-                setIsPasswordLogin(evt.target.checked);
+        <p>
+          {isPasswordLogin ? (
+            <Link
+              href={{
+                pathname: "/",
+                query: { magicLink: "yes" },
               }}
-            />
-            Sign in with password
-          </label>
-        </fieldset>
+            >
+              Go to Magic Link Login
+            </Link>
+          ) : (
+            <Link
+              href={{
+                pathname: "/",
+                query: { magicLink: "no" },
+              }}
+            >
+              Go to Password Login
+            </Link>
+          )}
+        </p>
 
         <button type="submit">
           Sign in with
