@@ -12,6 +12,8 @@ export const Login = ({ isPasswordLogin }) => {
 
   return (
     <form
+      method="POST"
+      action="/auth/pw-login"
       onSubmit={(event) => {
         event.preventDefault();
 
@@ -36,18 +38,27 @@ export const Login = ({ isPasswordLogin }) => {
 
         <fieldset>
           <label htmlFor="email">
-            Email <input ref={emailInputRef} type="email" id="email" required />
-          </label>
-
-          <label htmlFor="password">
-            Password{" "}
+            Email{" "}
             <input
-              ref={passwordInputRef}
-              type="password"
-              id="password"
-              hidden={!isPasswordLogin}
+              ref={emailInputRef}
+              type="email"
+              id="email"
+              name="email"
+              required
             />
           </label>
+
+          {isPasswordLogin && (
+            <label htmlFor="password">
+              Password{" "}
+              <input
+                ref={passwordInputRef}
+                type="password"
+                id="password"
+                name="password"
+              />
+            </label>
+          )}
         </fieldset>
 
         <p>
