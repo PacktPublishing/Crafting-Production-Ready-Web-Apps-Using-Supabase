@@ -22,13 +22,25 @@ export const Login = ({ isPasswordLogin }) => {
 
         <fieldset>
           <label htmlFor="email">
-            Email <input ref={emailInputRef} type="email" id="email" required />
+            Email{" "}
+            <input
+              ref={emailInputRef}
+              type="email"
+              id="email"
+              name="email"
+              required
+            />
           </label>
 
           {isPasswordLogin && (
             <label htmlFor="password">
               Password{" "}
-              <input ref={passwordInputRef} type="password" id="password" />
+              <input
+                ref={passwordInputRef}
+                type="password"
+                id="password"
+                name="password"
+              />
             </label>
           )}
         </fieldset>
