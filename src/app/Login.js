@@ -10,12 +10,24 @@ export const Login = ({ isPasswordLogin }) => {
   const supabase = getSupabaseFrontendClient();
   const router = useRouter();
 
+  useEffect(() => {
+    const {
+      data: { subscription },
+    } = supabase.auth.onAuthStateChange((event, session) => {
+      if (event === "SIGNED_IN") {
+        router.push("/");
+      }
+    });
+
+    return () => subscription.unsubscribe();
+  }, []);
+
   return (
     <form
       method="POST"
-      action="/auth/pw-login"
+      action={isPasswordLogin ? "/auth/pw-login" : "/auth/magic-link"}
       onSubmit={(event) => {
-        event.preventDefault();
+        isPasswordLogin && event.preventDefault();
 
         if (isPasswordLogin) {
           supabase.auth
@@ -49,7 +61,7 @@ export const Login = ({ isPasswordLogin }) => {
           </label>
 
           {isPasswordLogin && (
-            <label htmlFor="password">
+            <label htmlFor="password" style={{ marginTop: "20px" }}>
               Password{" "}
               <input
                 ref={passwordInputRef}
