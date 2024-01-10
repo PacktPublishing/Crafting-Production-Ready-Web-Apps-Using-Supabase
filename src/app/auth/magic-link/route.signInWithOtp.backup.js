@@ -1,20 +1,15 @@
-import { getSupabaseAdminClient } from "@/supabase-utils/adminClient";
 import { getSupabaseCookiesUtilClient } from "@/supabase-utils/cookiesUtilClient";
 import { NextResponse } from "next/server";
 
 export async function POST(request) {
   const formData = await request.formData();
   const email = formData.get("email");
-  const supabaseAdmin = getSupabaseAdminClient();
+  const supabase = getSupabaseCookiesUtilClient({ request });
 
-  const { data: linkData, error } = await supabaseAdmin.auth.admin.generateLink(
-    {
-      email,
-      type: "magiclink",
-    }
-  );
-
-  const { hashed_token } = linkData.properties;
+  const { data, error } = await supabase.auth.signInWithOtp({
+    email,
+    options: { shouldCreateUser: false },
+  });
 
   if (error) {
     return NextResponse.redirect(
