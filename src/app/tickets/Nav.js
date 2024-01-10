@@ -60,7 +60,7 @@ export default function Nav() {
         <li>
           <Link
             role="button"
-            href="/logout"
+            href="/auth/logout"
             className="secondary"
             onClick={(event) => {
               event.preventDefault();
