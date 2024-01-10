@@ -9,7 +9,7 @@ export async function POST(request) {
   console.log("email", email);
   console.log("password", password);
 
-  const supabase = getSupabaseCookiesUtilClient({ request });
+  const supabase = getSupabaseCookiesUtilClient();
   const { data, error } = await supabase.auth.signInWithPassword({
     email,
     password,
