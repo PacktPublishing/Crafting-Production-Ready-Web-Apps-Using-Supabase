@@ -5,7 +5,5 @@ export async function middleware(req) {
   const res = NextResponse.next();
   const supabase = getSupabaseReqResClient({ req, res });
 
-  // do something with supabase
-
   return res;
 }
