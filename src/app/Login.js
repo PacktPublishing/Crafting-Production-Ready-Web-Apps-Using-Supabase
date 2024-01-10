@@ -1,19 +1,47 @@
 "use client";
+import { getSupabaseBrowserClient } from "@/supabase-utils/browserClient";
 import Link from "next/link";
-import { useRef, useState } from "react";
+import { useRouter } from "next/navigation";
+import { useEffect, useRef } from "react";
 
 export const Login = ({ isPasswordLogin }) => {
   const emailInputRef = useRef(null);
   const passwordInputRef = useRef(null);
+  const supabase = getSupabaseBrowserClient();
+  const router = useRouter();
+
+  useEffect(() => {
+    const {
+      data: { subscription },
+    } = supabase.auth.onAuthStateChange((event, session) => {
+      if (event === "SIGNED_IN") {
+        router.push("/");
+      }
+    });
+
+    return () => subscription.unsubscribe();
+  }, []);
 
   return (
     <form
+      method="POST"
+      action={isPasswordLogin ? "/auth/pw-login" : "/auth/magic-link"}
       onSubmit={(event) => {
-        event.preventDefault();
+        isPasswordLogin && event.preventDefault();
+
         if (isPasswordLogin) {
-          alert("User wants to login with password");
-        } else {
-          alert("User wants to login with magic link");
+          supabase.auth
+            .signInWithPassword({
+              email: emailInputRef.current.value,
+              password: passwordInputRef.current.value,
+            })
+            .then((result) => {
+              if (result.data?.user) {
+                router.push("/tickets");
+              } else {
+                alert("Could not sign in");
+              }
+            });
         }
       }}
     >
@@ -33,7 +61,7 @@ export const Login = ({ isPasswordLogin }) => {
           </label>
 
           {isPasswordLogin && (
-            <label htmlFor="password">
+            <label htmlFor="password" style={{ marginTop: "20px" }}>
               Password{" "}
               <input
                 ref={passwordInputRef}
