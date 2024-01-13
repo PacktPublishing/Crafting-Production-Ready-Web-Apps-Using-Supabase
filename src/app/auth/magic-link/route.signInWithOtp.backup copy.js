@@ -8,7 +8,10 @@ export async function POST(request) {
 
   const { data, error } = await supabase.auth.signInWithOtp({
     email,
-    options: { shouldCreateUser: false },
+    options: {
+      shouldCreateUser: false,
+      emailRedirectTo: "http://localhost:3000/",
+    },
   });
 
   if (error) {
