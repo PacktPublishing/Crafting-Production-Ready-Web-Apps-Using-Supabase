@@ -12,6 +12,10 @@ export async function middleware(req) {
 
   if (requestedPath.startsWith("/tickets")) {
     if (!sessionUser) {
+      // TODO: make sure the sessionUser will contain app_metadata containing
+      // the host SLUG (not domain because domain can change!)
+      // and then we can CHEAPLY do an insecure match here for the redirection
+
       return NextResponse.redirect(new URL("/", req.url));
     }
   } else if (requestedPath === "/") {
@@ -26,12 +30,12 @@ export async function middleware(req) {
 export const config = {
   matcher: [
     /*
-     * Match all request paths except for the ones starting with:
-     * - _next/static (static files)
-     * - _next/image (image optimization files)
-     * - favicon.ico (favicon file)
-     * Feel free to modify this pattern to include more paths.
+     * Match all paths except for:
+     * 1. /api routes
+     * 2. /_next (Next.js/Vercel internals)
+     * 3. /_static (inside /public)
+     * 4. all root files inside /public (e.g. /favicon.ico)
      */
-    "/((?!_next/static|_next/image|favicon.ico).*)",
+    "/((?!api/|_next/|_static/|favicon.ico).*)",
   ],
 };
