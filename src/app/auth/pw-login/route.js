@@ -6,9 +6,6 @@ export async function POST(request) {
   const email = formData.get("email");
   const password = formData.get("password");
 
-  console.log("email", email);
-  console.log("password", password);
-
   const supabase = getSupabaseCookiesUtilClient();
   const { data, error } = await supabase.auth.signInWithPassword({
     email,
