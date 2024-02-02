@@ -22,7 +22,7 @@ export const Login = ({ formType = "pw-login" }) => {
       data: { subscription },
     } = supabase.auth.onAuthStateChange((event, session) => {
       if (event === "SIGNED_IN") {
-        router.push("/");
+        router.push("/tickets");
       }
     });
 
@@ -43,11 +43,15 @@ export const Login = ({ formType = "pw-login" }) => {
               password: passwordInputRef.current.value,
             })
             .then((result) => {
+              !result.data?.user && alert("Could not sign in"); // new version
+
+              /** old version:
               if (result.data?.user) {
                 router.push("/tickets");
               } else {
                 alert("Could not sign in");
               }
+              */
             });
         }
       }}
