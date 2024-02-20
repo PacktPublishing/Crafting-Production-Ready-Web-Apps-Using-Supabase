@@ -1,10 +1,11 @@
 /** @type {import('next').NextConfig} */
 const nextConfig = {
   reactStrictMode: true,
-  rewrites: async () => [
+  redirects: async () => [
     {
       source: "/logout",
       destination: "/auth/logout",
+      permanent: true,
     },
   ],
 };
