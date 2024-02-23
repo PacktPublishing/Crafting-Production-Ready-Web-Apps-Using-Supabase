@@ -28,14 +28,5 @@ export async function middleware(req) {
 }
 
 export const config = {
-  matcher: [
-    /*
-     * Match all paths except for:
-     * 1. /api routes
-     * 2. /_next (Next.js/Vercel internals)
-     * 3. /_static (inside /public)
-     * 4. all root files inside /public (e.g. /favicon.ico)
-     */
-    "/((?!_next/|_static/|[\\w-]+\\.\\w+).*)",
-  ],
+  matcher: ["/((?!.*\\.).*)"],
 };
