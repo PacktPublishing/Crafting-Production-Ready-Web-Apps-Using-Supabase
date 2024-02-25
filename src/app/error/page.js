@@ -2,7 +2,12 @@ import Link from "next/link";
 
 export default function ErrorPage({ searchParams }) {
   const { type } = searchParams;
-  const knownErrors = ["login-failed", "invalid_magiclink"];
+  const knownErrors = [
+    "login-failed",
+    "invalid_magiclink",
+    "magiclink",
+    "recovery",
+  ];
 
   return (
     <div style={{ textAlign: "center" }}>
@@ -14,6 +19,18 @@ export default function ErrorPage({ searchParams }) {
         <strong>
           The magic link was invalid. Maybe it expired? Please request a new
           one.
+        </strong>
+      )}
+
+      {type === "magiclink" && (
+        <strong>
+          Could not send a magic link. Maybe you had a typo in your E-Mail?
+        </strong>
+      )}
+
+      {type === "recovery" && (
+        <strong>
+          Could not request new password. Maybe you had a typo in your E-Mail?
         </strong>
       )}
 
