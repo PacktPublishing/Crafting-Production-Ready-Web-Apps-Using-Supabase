@@ -12,13 +12,13 @@ export async function POST(request) {
     {
       email,
       type,
-    }
+    },
   );
 
   if (error) {
     return NextResponse.redirect(
-      new URL("/error?type=magiclink", request.url),
-      302
+      new URL(`/error?type=${type}`, request.url),
+      302,
     );
   }
 
@@ -26,7 +26,7 @@ export async function POST(request) {
 
   const constructedLink = new URL(
     `/auth/verify?hashed_token=${hashed_token}&type=${type}`,
-    request.url
+    request.url,
   );
 
   const transporter = nodemailer.createTransport({
