@@ -1,0 +1,146 @@
+:root {
+  --max-width: 1100px;
+  --border-radius: 4px;
+  --font-mono: ui-monospace, Menlo, Monaco, "Cascadia Mono", "Segoe UI Mono",
+    "Roboto Mono", "Oxygen Mono", "Ubuntu Monospace", "Source Code Pro",
+    "Fira Mono", "Droid Sans Mono", "Courier New", monospace;
+}
+
+* {
+  box-sizing: border-box;
+  padding: 0;
+  margin: 0;
+
+  &:last-child:not(footer) {
+    margin-bottom: 0 !important;
+  }
+}
+
+html {
+  color-scheme: dark;
+}
+
+html,
+body {
+  max-width: 100vw;
+  font-family: sans-serif;
+  font-size: 17px;
+}
+
+pre,
+code {
+  display: block;
+}
+
+code {
+  font-family: var(--font-mono);
+  background-color: rgb(84, 84, 84);
+  padding: 1rem;
+  border-radius: var(--border-radius);
+  margin: 1rem;
+  overflow: hidden;
+
+  &::before {
+    display: block;
+    content: attr(data-label);
+    margin: -1rem -1rem 1rem -1rem;
+    background-color: #e54eb05b;
+    padding: 0.4rem;
+    min-width: 250px;
+  }
+
+  &.inline {
+    display: inline;
+    margin: 0;
+    padding: 0 4px;
+
+    &::before {
+      display: none;
+    }
+  }
+}
+
+main {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  min-height: 100vh;
+  padding: 3em;
+}
+
+body {
+  color: rgb(var(--foreground-rgb));
+  background: linear-gradient(
+      to bottom,
+      transparent,
+      rgb(var(--background-end-rgb))
+    )
+    rgb(var(--background-start-rgb));
+}
+
+a {
+  color: inherit;
+  text-decoration: none;
+}
+
+h1 {
+  color: #f2b3ff;
+}
+
+h1,
+h2 {
+  margin-bottom: 0.4em;
+}
+
+a.highlight {
+  background-color: rgba(255, 255, 0, 0.118);
+  display: inline-block;
+  padding: 0.2em;
+
+  transition: background-color 0.2s ease-in-out;
+
+  &:hover {
+    background-color: rgba(255, 255, 0, 0.2);
+  }
+}
+
+ul li {
+  margin-bottom: 10px;
+}
+
+button {
+  border: none;
+  background-color: rgba(255, 255, 255, 0.05);
+  cursor: pointer;
+  padding: 0.5rem 1rem;
+  border-radius: var(--border-radius);
+  border: 1px solid rgba(255, 255, 255, 0.1);
+  transition: background-color 0.2s ease-in-out;
+
+  &:hover {
+    background-color: rgba(255, 255, 255, 0.1);
+  }
+}
+
+// pico css changes
+article,
+article > header,
+article > footer {
+  --block-spacing-vertical: calc(2.4 * var(--spacing));
+}
+
+h1,
+h2,
+h3,
+h4,
+h5,
+h6 {
+  &:not(:last-child) {
+    margin-bottom: 0.9em !important;
+  }
+
+  &:last-child {
+    margin-bottom: 0 !important;
+  }
+}
