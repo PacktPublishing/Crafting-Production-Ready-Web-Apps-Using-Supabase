@@ -13,7 +13,7 @@ export default function Nav({ tenant }) {
   const supabase = getSupabaseBrowserClient();
   const router = useRouter();
 
-  const getPath = (subPath) => urlPath(subPath ?? "", tenant);
+  const getPath = (subPath) => urlPath(subPath ?? "/", tenant);
 
   useEffect(() => {
     const {
@@ -76,6 +76,7 @@ export default function Nav({ tenant }) {
               event.preventDefault();
               supabase.auth.signOut();
             }}
+            prefetch={false}
           >
             Log out
           </Link>
