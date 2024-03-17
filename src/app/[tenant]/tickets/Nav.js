@@ -13,7 +13,7 @@ export default function Nav({ tenant }) {
   const supabase = getSupabaseBrowserClient();
   const router = useRouter();
 
-  const getPath = (subPath) => urlPath(subPath ?? "", tenant);
+  const getPath = (subPath) => urlPath(subPath ?? "/", tenant);
 
   useEffect(() => {
     const {
