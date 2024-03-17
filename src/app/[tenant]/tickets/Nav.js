@@ -70,6 +70,7 @@ export default function Nav({ tenant }) {
         <li>
           <Link
             role="button"
+            prefetch={false}
             href={getPath("/logout")}
             className="secondary"
             onClick={(event) => {

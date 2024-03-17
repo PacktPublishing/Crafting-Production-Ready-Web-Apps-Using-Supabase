@@ -12,6 +12,6 @@ export const getSupabaseReqResClient = ({ req, res }) => {
           setCookie(name, value, { req, res, ...options }),
         remove: (name, options) => deleteCookie(name, { req, res, ...options }),
       },
-    }
+    },
   );
 };

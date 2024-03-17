@@ -6,6 +6,8 @@ import { buildUrl, getHostnameAndPort } from "./utils/url-helpers";
 export async function middleware(req) {
   const res = NextResponse.next();
 
+  console.log("@match", req.url);
+
   const supabase = getSupabaseReqResClient({ req, res });
   const session = await supabase.auth.getSession();
 
@@ -18,8 +20,6 @@ export async function middleware(req) {
   const requestedPath = req.nextUrl.pathname;
   const sessionUser = session.data?.session?.user;
 
-  // const [tenant, ...restOfPath] = requestedPath.substr(1).split("/");
-  // const applicationPath = "/" + restOfPath.join("/");
   const tenant = TENANT_MAP[hostname];
   const applicationPath = requestedPath;
 
