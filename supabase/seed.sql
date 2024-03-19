@@ -18,24 +18,13 @@ SET xmloption = content;
 SET client_min_messages = warning;
 SET row_security = off;
 
---
--- Data for Name: audit_log_entries; Type: TABLE DATA; Schema: auth; Owner: supabase_auth_admin
---
-
-
-
---
--- Data for Name: flow_state; Type: TABLE DATA; Schema: auth; Owner: supabase_auth_admin
---
-
-
 
 --
 -- Data for Name: users; Type: TABLE DATA; Schema: auth; Owner: supabase_auth_admin
 --
 
 INSERT INTO "auth"."users" ("instance_id", "id", "aud", "role", "email", "encrypted_password", "email_confirmed_at", "invited_at", "confirmation_token", "confirmation_sent_at", "recovery_token", "recovery_sent_at", "email_change_token_new", "email_change", "email_change_sent_at", "last_sign_in_at", "raw_app_meta_data", "raw_user_meta_data", "is_super_admin", "created_at", "updated_at", "phone", "phone_confirmed_at", "phone_change", "phone_change_token", "phone_change_sent_at", "email_change_token_current", "email_change_confirm_status", "banned_until", "reauthentication_token", "reauthentication_sent_at", "is_sso_user", "deleted_at") VALUES
-	('00000000-0000-0000-0000-000000000000', '631e3d0c-26a1-47f9-b19b-6942f5df2eb6', 'authenticated', 'authenticated', 'icecream@cool.local', '$2a$10$TInzust1m75k7NZcBvilTe5UDwp3dApfTKOJNCYbTAEnkEOUCyCXe', '2024-01-05 18:12:26.316064+00', NULL, '', NULL, '', '2024-02-20 20:43:38.953008+00', '', '', NULL, '2024-03-09 13:47:13.187475+00', '{"tenants": ["packt", "oddmonkey"], "provider": "email", "providers": ["email"]}', '{}', NULL, '2024-01-05 18:12:26.308851+00', '2024-03-10 11:21:32.574589+00', NULL, NULL, '', '', NULL, '', 0, NULL, '', NULL, false, NULL);
+	('00000000-0000-0000-0000-000000000000', '631e3d0c-26a1-47f9-b19b-6942f5df2eb6', 'authenticated', 'authenticated', 'icecream@cool.local', '$2a$10$TInzust1m75k7NZcBvilTe5UDwp3dApfTKOJNCYbTAEnkEOUCyCXe', '2024-01-05 18:12:26.316064+00', NULL, '', NULL, '', '2024-02-20 20:43:38.953008+00', '', '', NULL, '2024-03-18 16:55:33.864226+00', '{"tenants": ["packt", "oddmonkey"], "provider": "email", "providers": ["email"]}', '{}', NULL, '2024-01-05 18:12:26.308851+00', '2024-03-19 10:59:29.596534+00', NULL, NULL, '', '', NULL, '', 0, NULL, '', NULL, false, NULL);
 
 
 --
@@ -56,12 +45,16 @@ INSERT INTO "auth"."identities" ("provider_id", "user_id", "identity_data", "pro
 -- Data for Name: sessions; Type: TABLE DATA; Schema: auth; Owner: supabase_auth_admin
 --
 
+INSERT INTO "auth"."sessions" ("id", "user_id", "created_at", "updated_at", "factor_id", "aal", "not_after", "refreshed_at", "user_agent", "ip", "tag") VALUES
+	('63ae2149-48e2-4524-b028-6b1faa6cfc43', '631e3d0c-26a1-47f9-b19b-6942f5df2eb6', '2024-03-18 16:55:33.864268+00', '2024-03-19 10:59:29.597764+00', NULL, 'aal1', NULL, '2024-03-19 10:59:29.597727', 'Mozilla/5.0 (Macintosh; Intel Mac OS X 10_15_7) AppleWebKit/605.1.15 (KHTML, like Gecko) Version/17.2.1 Safari/605.1.15', '172.19.0.1', NULL);
 
 
 --
 -- Data for Name: mfa_amr_claims; Type: TABLE DATA; Schema: auth; Owner: supabase_auth_admin
 --
 
+INSERT INTO "auth"."mfa_amr_claims" ("session_id", "created_at", "updated_at", "authentication_method", "id") VALUES
+	('63ae2149-48e2-4524-b028-6b1faa6cfc43', '2024-03-18 16:55:33.865622+00', '2024-03-18 16:55:33.865622+00', 'password', '340cc68b-79d4-4814-b751-58b5164b45d5');
 
 
 --
@@ -72,12 +65,6 @@ INSERT INTO "auth"."identities" ("provider_id", "user_id", "identity_data", "pro
 
 --
 -- Data for Name: mfa_challenges; Type: TABLE DATA; Schema: auth; Owner: supabase_auth_admin
---
-
-
-
---
--- Data for Name: refresh_tokens; Type: TABLE DATA; Schema: auth; Owner: supabase_auth_admin
 --
 
 
@@ -140,6 +127,14 @@ INSERT INTO "public"."tenant_permissions" ("id", "created_at", "service_user", "
 
 
 --
+-- Data for Name: tickets; Type: TABLE DATA; Schema: public; Owner: postgres
+--
+
+INSERT INTO "public"."tickets" ("id", "created_at", "title", "description", "created_by", "tenant", "status", "author_name") VALUES
+	(1, '2024-03-19 11:21:47.383329+00', 'Make sure to show the author''s name', 'Showing the author name in the ticket is important', 1, 'packt', 'open', 'David Lorenz');
+
+
+--
 -- Data for Name: buckets; Type: TABLE DATA; Schema: storage; Owner: supabase_storage_admin
 --
 
@@ -167,7 +162,7 @@ INSERT INTO "public"."tenant_permissions" ("id", "created_at", "service_user", "
 -- Name: refresh_tokens_id_seq; Type: SEQUENCE SET; Schema: auth; Owner: supabase_auth_admin
 --
 
-SELECT pg_catalog.setval('"auth"."refresh_tokens_id_seq"', 140, true);
+SELECT pg_catalog.setval('"auth"."refresh_tokens_id_seq"', 206, true);
 
 
 --
@@ -189,6 +184,13 @@ SELECT pg_catalog.setval('"public"."service_users_id_seq"', 11, true);
 --
 
 SELECT pg_catalog.setval('"public"."tenant_permissions_id_seq"', 9, true);
+
+
+--
+-- Name: tickets_id_seq; Type: SEQUENCE SET; Schema: public; Owner: postgres
+--
+
+SELECT pg_catalog.setval('"public"."tickets_id_seq"', 3, true);
 
 
 --
