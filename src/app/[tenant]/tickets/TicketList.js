@@ -2,11 +2,17 @@ import { getSupabaseCookiesUtilClient } from "@/supabase-utils/cookiesUtilClient
 import { TICKET_STATUS } from "@/utils/constants";
 import { urlPath } from "@/utils/url-helpers";
 import Link from "next/link";
+import classes from "./TicketList.module.css";
 
 export async function TicketList({ tenant, searchParams }) {
-  const page = Number.isInteger(1 * searchParams.page)
-    ? Number(searchParams.page)
-    : 1;
+  console.log("trigger!");
+  let page = 1;
+  if (
+    Number.isInteger(Number(searchParams.page)) &&
+    Number(searchParams.page) > 0
+  ) {
+    page = Number(searchParams.page);
+  }
 
   const supabase = getSupabaseCookiesUtilClient();
 
@@ -15,16 +21,19 @@ export async function TicketList({ tenant, searchParams }) {
     .select("*", { count: "exact", head: true })
     .eq("tenant", tenant);
 
+  const startingPoint = (page - 1) * 6;
   const { data: tickets, error } = await supabase
     .from("tickets")
     .select()
     .eq("tenant", tenant)
-    .limit(6);
+    .order("status", { ascending: true })
+    .order("created_at", { ascending: false })
+    .range(startingPoint, startingPoint + 5);
 
-  const moreRows = count - tickets.length > 0;
+  const moreRows = count - page * 6 > 0;
 
   return (
-    <>
+    <div className={classes.ticketList}>
       <table>
         <thead>
           <tr>
@@ -48,18 +57,25 @@ export async function TicketList({ tenant, searchParams }) {
         </tbody>
       </table>
 
-      <div>
-        <Link
-          role="button"
-          href={{
-            query: {
-              page: 2,
-            },
-          }}
-        >
-          Next page
-        </Link>
+      <div style={{ display: "flex" }}>
+        {page > 1 && (
+          <Link
+            role="button"
+            href={{ query: { page: page - 1, r: Math.random() } }}
+          >
+            Previous page
+          </Link>
+        )}
+        {moreRows && (
+          <Link
+            style={{ marginLeft: "auto" }}
+            role="button"
+            href={{ query: { page: page + 1, r: Math.random() } }}
+          >
+            Next page
+          </Link>
+        )}
       </div>
-    </>
+    </div>
   );
 }
