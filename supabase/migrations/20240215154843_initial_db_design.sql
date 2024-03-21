@@ -212,6 +212,3 @@ to authenticated
 using ((EXISTS ( SELECT
    FROM tenant_permissions tp
   WHERE (tp.tenant = tenants.id))));
-
-
-

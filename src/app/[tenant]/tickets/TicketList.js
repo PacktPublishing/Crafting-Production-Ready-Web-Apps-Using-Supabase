@@ -5,7 +5,6 @@ import Link from "next/link";
 import classes from "./TicketList.module.css";
 
 export async function TicketList({ tenant, searchParams }) {
-  console.log("trigger!");
   let page = 1;
   if (
     Number.isInteger(Number(searchParams.page)) &&
@@ -16,19 +15,37 @@ export async function TicketList({ tenant, searchParams }) {
 
   const supabase = getSupabaseCookiesUtilClient();
 
-  const { count } = await supabase
+  let countStatement = supabase
     .from("tickets")
     .select("*", { count: "exact", head: true })
     .eq("tenant", tenant);
 
   const startingPoint = (page - 1) * 6;
-  const { data: tickets, error } = await supabase
-    .from("tickets")
-    .select()
-    .eq("tenant", tenant)
+  let ticketsStatement = supabase.from("tickets").select().eq("tenant", tenant);
+
+  const searchValue = searchParams.search?.trim();
+  if (searchValue) {
+    const cleanSearchString = searchValue
+      .replaceAll('"', "")
+      .replaceAll("\\", "")
+      .replaceAll("%", "");
+
+    const postgrestSearchValue = '"%' + cleanSearchString + '%"';
+    const postgrestFilterString =
+      `title.ilike.${postgrestSearchValue}` +
+      `, description.ilike.${postgrestSearchValue}`;
+
+    countStatement = countStatement.or(postgrestFilterString);
+    ticketsStatement = ticketsStatement.or(postgrestFilterString);
+  }
+
+  ticketsStatement = ticketsStatement
     .order("status", { ascending: true })
     .order("created_at", { ascending: false })
     .range(startingPoint, startingPoint + 5);
+
+  const { count } = await countStatement;
+  const { data: tickets } = await ticketsStatement;
 
   const moreRows = count - page * 6 > 0;
 
@@ -43,7 +60,7 @@ export async function TicketList({ tenant, searchParams }) {
           </tr>
         </thead>
         <tbody>
-          {tickets.map((ticket) => (
+          {(tickets || []).map((ticket) => (
             <tr key={ticket.id}>
               <td>{ticket.id}</td>
               <td>
@@ -61,7 +78,13 @@ export async function TicketList({ tenant, searchParams }) {
         {page > 1 && (
           <Link
             role="button"
-            href={{ query: { page: page - 1, r: Math.random() } }}
+            href={{
+              query: {
+                page: page - 1,
+                r: Math.random(),
+                search: searchParams.search,
+              },
+            }}
           >
             Previous page
           </Link>
@@ -70,7 +93,13 @@ export async function TicketList({ tenant, searchParams }) {
           <Link
             style={{ marginLeft: "auto" }}
             role="button"
-            href={{ query: { page: page + 1, r: Math.random() } }}
+            href={{
+              query: {
+                page: page + 1,
+                r: Math.random(),
+                search: searchParams.search,
+              },
+            }}
           >
             Next page
           </Link>

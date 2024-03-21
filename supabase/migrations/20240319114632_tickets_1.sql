@@ -117,5 +117,3 @@ using (COALESCE((((auth.jwt() -> 'app_metadata'::text) -> 'tenants'::text) ? ten
 CREATE TRIGGER tr_tickets_autoset_author_name BEFORE INSERT ON public.tickets FOR EACH ROW EXECUTE FUNCTION set_ticket_author_name();
 
 CREATE TRIGGER tr_tickets_autoset_created_by BEFORE INSERT ON public.tickets FOR EACH ROW EXECUTE FUNCTION set_created_by_value();
-
-
