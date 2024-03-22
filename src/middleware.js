@@ -6,8 +6,6 @@ import { buildUrl, getHostnameAndPort } from "./utils/url-helpers";
 export async function middleware(req) {
   const res = NextResponse.next();
 
-  console.log("@match", req.url);
-
   const supabase = getSupabaseReqResClient({ req, res });
   const session = await supabase.auth.getSession();
 

@@ -144,3 +144,11 @@ h6 {
     margin-bottom: 0 !important;
   }
 }
+
+button.little-danger {
+  font-size: 0.9rem;
+  width: auto;
+  justify-self: end;
+  border-color: var(--del-color);
+  background: transparent;
+}
