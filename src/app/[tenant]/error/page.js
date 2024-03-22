@@ -63,7 +63,7 @@ export default function ErrorPage({ searchParams, params }) {
 
       {type === "register_unknown" && (
         <strong>
-          Sorry but an unknown error occured when trying to create an account.
+          Sorry but an unknown error occurred when trying to create an account.
         </strong>
       )}
 
