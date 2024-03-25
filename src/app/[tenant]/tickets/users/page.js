@@ -7,8 +7,6 @@ export default async function UserList({ params }) {
     tenant_id: params.tenant,
   });
 
-  console.log({ users });
-
   return (
     <table>
       <thead>
