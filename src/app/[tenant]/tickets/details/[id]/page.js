@@ -20,8 +20,15 @@ export default async function TicketDetailsPage({ params }) {
     .single();
 
   const isAuthor = serviceUser.id === ticket.created_by;
-  const { created_at, title, description, created_by, status, author_name } =
-    ticket;
+  const {
+    created_at,
+    title,
+    description,
+    created_by,
+    status,
+    author_name,
+    assignee,
+  } = ticket;
 
   const dateString = new Date(created_at).toLocaleString("en-US");
 
@@ -35,6 +42,7 @@ export default async function TicketDetailsPage({ params }) {
       author_name={author_name}
       dateString={dateString}
       isAuthor={isAuthor}
+      assignee={assignee}
     />
   );
 }

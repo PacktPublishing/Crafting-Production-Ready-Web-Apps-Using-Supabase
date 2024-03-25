@@ -69,6 +69,7 @@ export default function CreateTicket({ params }) {
         <AssigneeSelect
           onValueChanged={(v) => setAssignee(v)}
           tenant={params.tenant}
+          disabled={isLoading}
         />
 
         <textarea
