@@ -1,7 +1,6 @@
 import { getSupabaseCookiesUtilClient } from "@/supabase-utils/cookiesUtilClient";
 import { notFound } from "next/navigation";
 import { TicketDetails } from "./TicketDetails";
-import { headers } from "next/headers";
 
 export default async function TicketDetailsPage({ params }) {
   const supabase = getSupabaseCookiesUtilClient();

@@ -1,4 +1,5 @@
 "use client";
+import { AssigneeSelect } from "@/components/AssigneeSelect";
 import { getSupabaseBrowserClient } from "@/supabase-utils/browserClient";
 import { urlPath } from "@/utils/url-helpers";
 import { useRouter } from "next/navigation";
@@ -10,6 +11,7 @@ export default function CreateTicket({ params }) {
   const ticketDescriptionRef = useRef(null);
   const [isLoading, setIsLoading] = useState(false);
   const router = useRouter();
+  const [assignee, setAssignee] = useState(null);
 
   const supabase = getSupabaseBrowserClient();
 
@@ -37,6 +39,7 @@ export default function CreateTicket({ params }) {
                 title,
                 description,
                 tenant,
+                assignee,
               })
               .select()
               .single()
@@ -62,6 +65,12 @@ export default function CreateTicket({ params }) {
           ref={ticketTitleRef}
           placeholder="Add a title"
         />
+
+        <AssigneeSelect
+          onValueChanged={(v) => setAssignee(v)}
+          tenant={params.tenant}
+        />
+
         <textarea
           disabled={isLoading}
           ref={ticketDescriptionRef}
