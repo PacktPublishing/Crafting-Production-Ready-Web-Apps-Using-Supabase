@@ -248,13 +248,58 @@ INSERT INTO "auth"."audit_log_entries" ("instance_id", "id", "payload", "created
 	('00000000-0000-0000-0000-000000000000', 'f102529f-6f9f-4da2-b446-6f8149d9ee99', '{"action":"token_refreshed","actor_id":"631e3d0c-26a1-47f9-b19b-6942f5df2eb6","actor_username":"icecream@cool.local","actor_via_sso":false,"log_type":"token"}', '2024-03-21 21:24:09.854999+00', ''),
 	('00000000-0000-0000-0000-000000000000', 'c6a08443-0603-4d50-a76f-91759e66a42c', '{"action":"token_revoked","actor_id":"631e3d0c-26a1-47f9-b19b-6942f5df2eb6","actor_username":"icecream@cool.local","actor_via_sso":false,"log_type":"token"}', '2024-03-21 21:24:09.863997+00', ''),
 	('00000000-0000-0000-0000-000000000000', 'bf41a11a-f128-4295-9331-e00f4ee39cb4', '{"action":"token_refreshed","actor_id":"631e3d0c-26a1-47f9-b19b-6942f5df2eb6","actor_username":"icecream@cool.local","actor_via_sso":false,"log_type":"token"}', '2024-03-22 08:30:40.534356+00', ''),
-	('00000000-0000-0000-0000-000000000000', '03d4c35b-d68a-4d53-baf3-5229c5d0960e', '{"action":"token_revoked","actor_id":"631e3d0c-26a1-47f9-b19b-6942f5df2eb6","actor_username":"icecream@cool.local","actor_via_sso":false,"log_type":"token"}', '2024-03-22 08:30:40.540379+00', '');
+	('00000000-0000-0000-0000-000000000000', '03d4c35b-d68a-4d53-baf3-5229c5d0960e', '{"action":"token_revoked","actor_id":"631e3d0c-26a1-47f9-b19b-6942f5df2eb6","actor_username":"icecream@cool.local","actor_via_sso":false,"log_type":"token"}', '2024-03-22 08:30:40.540379+00', ''),
+	('00000000-0000-0000-0000-000000000000', '68155878-32b1-4eff-8b02-9ecedc681b6c', '{"action":"token_refreshed","actor_id":"631e3d0c-26a1-47f9-b19b-6942f5df2eb6","actor_username":"icecream@cool.local","actor_via_sso":false,"log_type":"token"}', '2024-03-22 09:28:42.639416+00', ''),
+	('00000000-0000-0000-0000-000000000000', '6ec1ce2a-1e10-4367-a462-4ddbaf842531', '{"action":"token_revoked","actor_id":"631e3d0c-26a1-47f9-b19b-6942f5df2eb6","actor_username":"icecream@cool.local","actor_via_sso":false,"log_type":"token"}', '2024-03-22 09:28:42.640564+00', ''),
+	('00000000-0000-0000-0000-000000000000', '8d332870-c55a-430a-98b4-1e18f9d3b364', '{"action":"token_refreshed","actor_id":"631e3d0c-26a1-47f9-b19b-6942f5df2eb6","actor_username":"icecream@cool.local","actor_via_sso":false,"log_type":"token"}', '2024-03-22 10:27:11.628668+00', ''),
+	('00000000-0000-0000-0000-000000000000', 'da62b5da-a75c-4b01-9dd7-5e5ca61ae861', '{"action":"token_revoked","actor_id":"631e3d0c-26a1-47f9-b19b-6942f5df2eb6","actor_username":"icecream@cool.local","actor_via_sso":false,"log_type":"token"}', '2024-03-22 10:27:11.630638+00', ''),
+	('00000000-0000-0000-0000-000000000000', '01224092-94f7-4409-b011-6efa6b954b09', '{"action":"token_refreshed","actor_id":"631e3d0c-26a1-47f9-b19b-6942f5df2eb6","actor_username":"icecream@cool.local","actor_via_sso":false,"log_type":"token"}', '2024-03-22 12:43:06.002957+00', ''),
+	('00000000-0000-0000-0000-000000000000', '2ad4a104-2d45-43d4-8cf2-95b38e932769', '{"action":"token_revoked","actor_id":"631e3d0c-26a1-47f9-b19b-6942f5df2eb6","actor_username":"icecream@cool.local","actor_via_sso":false,"log_type":"token"}', '2024-03-22 12:43:06.004758+00', ''),
+	('00000000-0000-0000-0000-000000000000', '648899c5-ed85-4b8c-9071-77ff922370f4', '{"action":"user_signedup","actor_id":"6acf8a03-97b6-464b-8ad0-52df5187ccdd","actor_name":"David Lorenz","actor_username":"mail.lorenz@gmail.com","actor_via_sso":false,"log_type":"team","traits":{"provider":"google"}}', '2024-03-22 14:10:22.94973+00', ''),
+	('00000000-0000-0000-0000-000000000000', 'cdd5e475-f4f0-464c-abab-16442e487773', '{"action":"user_signedup","actor_id":"6acf8a03-97b6-464b-8ad0-52df5187ccdd","actor_name":"David Lorenz","actor_username":"mail.lorenz@gmail.com","actor_via_sso":false,"log_type":"team","traits":{"provider":"google"}}', '2024-03-22 14:13:21.899961+00', ''),
+	('00000000-0000-0000-0000-000000000000', '2291fc62-6274-49bc-b039-71fe9367cb03', '{"action":"token_refreshed","actor_id":"631e3d0c-26a1-47f9-b19b-6942f5df2eb6","actor_username":"icecream@cool.local","actor_via_sso":false,"log_type":"token"}', '2024-03-22 18:03:16.808408+00', ''),
+	('00000000-0000-0000-0000-000000000000', '526a274a-5bea-4015-8df4-e401c393481e', '{"action":"token_revoked","actor_id":"631e3d0c-26a1-47f9-b19b-6942f5df2eb6","actor_username":"icecream@cool.local","actor_via_sso":false,"log_type":"token"}', '2024-03-22 18:03:16.810194+00', ''),
+	('00000000-0000-0000-0000-000000000000', 'ae38fba3-ffd0-4501-8d66-ac266c279bad', '{"action":"logout","actor_id":"631e3d0c-26a1-47f9-b19b-6942f5df2eb6","actor_username":"icecream@cool.local","actor_via_sso":false,"log_type":"account"}', '2024-03-22 18:03:37.661067+00', ''),
+	('00000000-0000-0000-0000-000000000000', '24851799-326b-4435-be8f-fb3c2a8bed96', '{"action":"login","actor_id":"631e3d0c-26a1-47f9-b19b-6942f5df2eb6","actor_username":"icecream@cool.local","actor_via_sso":false,"log_type":"account","traits":{"provider":"email"}}', '2024-03-24 09:37:38.637709+00', ''),
+	('00000000-0000-0000-0000-000000000000', 'f09b0ec8-ea20-4545-b6dc-bc0119e8ce22', '{"action":"logout","actor_id":"631e3d0c-26a1-47f9-b19b-6942f5df2eb6","actor_username":"icecream@cool.local","actor_via_sso":false,"log_type":"account"}', '2024-03-24 09:53:28.551966+00', ''),
+	('00000000-0000-0000-0000-000000000000', '1e7917d2-57f6-48d2-b1ae-8e4285a8bc06', '{"action":"user_signedup","actor_id":"00000000-0000-0000-0000-000000000000","actor_username":"service_role","actor_via_sso":false,"log_type":"team","traits":{"user_email":"clark@packt.local","user_id":"02906fc4-7b24-47ec-abc3-6c6970be75bd","user_phone":""}}', '2024-03-24 09:54:53.657708+00', ''),
+	('00000000-0000-0000-0000-000000000000', '2dfc0f07-7d7c-492f-b2b3-3884db68bbc8', '{"action":"user_signedup","actor_id":"02906fc4-7b24-47ec-abc3-6c6970be75bd","actor_username":"clark@packt.local","actor_via_sso":false,"log_type":"team"}', '2024-03-24 09:55:03.823582+00', ''),
+	('00000000-0000-0000-0000-000000000000', '91dc7d92-e1fd-4a36-a409-23d586734469', '{"action":"logout","actor_id":"02906fc4-7b24-47ec-abc3-6c6970be75bd","actor_username":"clark@packt.local","actor_via_sso":false,"log_type":"account"}', '2024-03-24 09:56:03.491543+00', ''),
+	('00000000-0000-0000-0000-000000000000', 'a00af881-3ed2-4868-b79d-7242286771af', '{"action":"user_signedup","actor_id":"00000000-0000-0000-0000-000000000000","actor_username":"service_role","actor_via_sso":false,"log_type":"team","traits":{"user_email":"sarah@activenode.learn","user_id":"99da03b3-6de9-4891-9b69-c5ed037523e9","user_phone":""}}', '2024-03-24 09:57:00.765381+00', ''),
+	('00000000-0000-0000-0000-000000000000', '9a443225-97e5-490d-bfcc-da792b09a0d6', '{"action":"login","actor_id":"631e3d0c-26a1-47f9-b19b-6942f5df2eb6","actor_username":"icecream@cool.local","actor_via_sso":false,"log_type":"account","traits":{"provider":"email"}}', '2024-03-24 09:57:22.69415+00', ''),
+	('00000000-0000-0000-0000-000000000000', '64443046-1f63-4d21-ac35-b5dc46385c63', '{"action":"user_signedup","actor_id":"99da03b3-6de9-4891-9b69-c5ed037523e9","actor_username":"sarah@activenode.learn","actor_via_sso":false,"log_type":"team"}', '2024-03-24 10:09:28.873505+00', ''),
+	('00000000-0000-0000-0000-000000000000', '5eae2e0e-dc05-455d-9a75-a1e5cfe84054', '{"action":"token_refreshed","actor_id":"631e3d0c-26a1-47f9-b19b-6942f5df2eb6","actor_username":"icecream@cool.local","actor_via_sso":false,"log_type":"token"}', '2024-03-24 11:38:38.489024+00', ''),
+	('00000000-0000-0000-0000-000000000000', '994a4fbc-54ee-4e3a-baa2-32a2d616973a', '{"action":"token_revoked","actor_id":"631e3d0c-26a1-47f9-b19b-6942f5df2eb6","actor_username":"icecream@cool.local","actor_via_sso":false,"log_type":"token"}', '2024-03-24 11:38:38.490493+00', ''),
+	('00000000-0000-0000-0000-000000000000', '200de4b5-5e84-4cc9-b945-4273516555f3', '{"action":"token_refreshed","actor_id":"631e3d0c-26a1-47f9-b19b-6942f5df2eb6","actor_username":"icecream@cool.local","actor_via_sso":false,"log_type":"token"}', '2024-03-24 11:38:38.55242+00', ''),
+	('00000000-0000-0000-0000-000000000000', 'caa6a4ab-101a-4e4c-82d3-c0a527c3dd38', '{"action":"token_refreshed","actor_id":"631e3d0c-26a1-47f9-b19b-6942f5df2eb6","actor_username":"icecream@cool.local","actor_via_sso":false,"log_type":"token"}', '2024-03-24 11:38:40.622034+00', ''),
+	('00000000-0000-0000-0000-000000000000', '6d8c2cdc-253a-49bf-b4f8-4313a38f99f4', '{"action":"token_refreshed","actor_id":"631e3d0c-26a1-47f9-b19b-6942f5df2eb6","actor_username":"icecream@cool.local","actor_via_sso":false,"log_type":"token"}', '2024-03-24 11:38:40.636018+00', ''),
+	('00000000-0000-0000-0000-000000000000', 'd26a86c1-9c2d-4b81-ac65-b487671a7010', '{"action":"token_refreshed","actor_id":"631e3d0c-26a1-47f9-b19b-6942f5df2eb6","actor_username":"icecream@cool.local","actor_via_sso":false,"log_type":"token"}', '2024-03-24 11:38:40.67417+00', ''),
+	('00000000-0000-0000-0000-000000000000', 'd5c8beda-8174-4a89-ba7a-5ed330103664', '{"action":"token_refreshed","actor_id":"631e3d0c-26a1-47f9-b19b-6942f5df2eb6","actor_username":"icecream@cool.local","actor_via_sso":false,"log_type":"token"}', '2024-03-24 11:38:41.007137+00', ''),
+	('00000000-0000-0000-0000-000000000000', '39205a6a-983b-4b85-9d80-aaa31d8e481b', '{"action":"login","actor_id":"631e3d0c-26a1-47f9-b19b-6942f5df2eb6","actor_username":"icecream@cool.local","actor_via_sso":false,"log_type":"account","traits":{"provider":"email"}}', '2024-03-24 11:39:31.089978+00', ''),
+	('00000000-0000-0000-0000-000000000000', '1bdc7965-30a3-497f-807b-985e37ee9e39', '{"action":"token_refreshed","actor_id":"631e3d0c-26a1-47f9-b19b-6942f5df2eb6","actor_username":"icecream@cool.local","actor_via_sso":false,"log_type":"token"}', '2024-03-25 09:20:06.642874+00', ''),
+	('00000000-0000-0000-0000-000000000000', 'a8bf6efb-aca9-43c1-8c21-0b40a562a5cb', '{"action":"token_revoked","actor_id":"631e3d0c-26a1-47f9-b19b-6942f5df2eb6","actor_username":"icecream@cool.local","actor_via_sso":false,"log_type":"token"}', '2024-03-25 09:20:06.643842+00', ''),
+	('00000000-0000-0000-0000-000000000000', '68435fe0-182b-4d36-aaff-3b88fc56c608', '{"action":"token_refreshed","actor_id":"631e3d0c-26a1-47f9-b19b-6942f5df2eb6","actor_username":"icecream@cool.local","actor_via_sso":false,"log_type":"token"}', '2024-03-25 11:06:10.764124+00', ''),
+	('00000000-0000-0000-0000-000000000000', '973d1b87-90d1-4b5b-a366-93e98a28952c', '{"action":"token_revoked","actor_id":"631e3d0c-26a1-47f9-b19b-6942f5df2eb6","actor_username":"icecream@cool.local","actor_via_sso":false,"log_type":"token"}', '2024-03-25 11:06:10.764956+00', ''),
+	('00000000-0000-0000-0000-000000000000', '3bfaa1b4-b3e2-4af3-a987-a51b2cbb9fdf', '{"action":"token_refreshed","actor_id":"99da03b3-6de9-4891-9b69-c5ed037523e9","actor_username":"sarah@activenode.learn","actor_via_sso":false,"log_type":"token"}', '2024-03-25 12:29:25.73928+00', ''),
+	('00000000-0000-0000-0000-000000000000', '1d64c553-b40f-4c7f-945b-75a8faeab823', '{"action":"token_revoked","actor_id":"99da03b3-6de9-4891-9b69-c5ed037523e9","actor_username":"sarah@activenode.learn","actor_via_sso":false,"log_type":"token"}', '2024-03-25 12:29:25.74113+00', ''),
+	('00000000-0000-0000-0000-000000000000', 'bbb61d5f-1d94-43e7-a7cd-460f27b40e0b', '{"action":"token_refreshed","actor_id":"631e3d0c-26a1-47f9-b19b-6942f5df2eb6","actor_username":"icecream@cool.local","actor_via_sso":false,"log_type":"token"}', '2024-03-25 12:29:27.630808+00', ''),
+	('00000000-0000-0000-0000-000000000000', '8e5d1ecb-82a7-4efe-89c5-8fb755438e79', '{"action":"token_revoked","actor_id":"631e3d0c-26a1-47f9-b19b-6942f5df2eb6","actor_username":"icecream@cool.local","actor_via_sso":false,"log_type":"token"}', '2024-03-25 12:29:27.632276+00', ''),
+	('00000000-0000-0000-0000-000000000000', 'f6438606-dd63-4db7-92ee-e2eb29ea87f3', '{"action":"token_refreshed","actor_id":"631e3d0c-26a1-47f9-b19b-6942f5df2eb6","actor_username":"icecream@cool.local","actor_via_sso":false,"log_type":"token"}', '2024-03-25 13:27:49.358696+00', ''),
+	('00000000-0000-0000-0000-000000000000', '559771ef-52eb-4289-a96b-35d96a384922', '{"action":"token_revoked","actor_id":"631e3d0c-26a1-47f9-b19b-6942f5df2eb6","actor_username":"icecream@cool.local","actor_via_sso":false,"log_type":"token"}', '2024-03-25 13:27:49.359875+00', ''),
+	('00000000-0000-0000-0000-000000000000', '4f1408d2-4119-4164-8f22-b086cebbe334', '{"action":"token_refreshed","actor_id":"631e3d0c-26a1-47f9-b19b-6942f5df2eb6","actor_username":"icecream@cool.local","actor_via_sso":false,"log_type":"token"}', '2024-03-25 14:37:10.412631+00', ''),
+	('00000000-0000-0000-0000-000000000000', 'b61e0da4-6883-4468-9210-c98d4d63b8c8', '{"action":"token_revoked","actor_id":"631e3d0c-26a1-47f9-b19b-6942f5df2eb6","actor_username":"icecream@cool.local","actor_via_sso":false,"log_type":"token"}', '2024-03-25 14:37:10.413851+00', ''),
+	('00000000-0000-0000-0000-000000000000', '54256bb7-71cc-4c57-8011-7bda170b490d', '{"action":"token_refreshed","actor_id":"631e3d0c-26a1-47f9-b19b-6942f5df2eb6","actor_username":"icecream@cool.local","actor_via_sso":false,"log_type":"token"}', '2024-03-25 14:37:10.447817+00', '');
 
 
 --
 -- Data for Name: flow_state; Type: TABLE DATA; Schema: auth; Owner: supabase_auth_admin
 --
 
+INSERT INTO "auth"."flow_state" ("id", "user_id", "auth_code", "code_challenge_method", "code_challenge", "provider_type", "provider_access_token", "provider_refresh_token", "created_at", "updated_at", "authentication_method") VALUES
+	('629f9153-8337-4bcb-be31-714369ecaaf9', NULL, '682e9d20-5ff2-411b-9b97-82ed6647c878', 's256', 'JZU8lTKLxAaHI9A6c2i__2q8bIVVNkJ2U5jdr6G7w8E', 'google', '', '', '2024-03-22 13:37:09.952574+00', '2024-03-22 13:37:09.952574+00', 'oauth'),
+	('bd7cca6d-2e2c-4195-b53c-8939ebe2e2ff', NULL, 'd6ffa7c0-2a79-4e42-bc75-f9843d015c7c', 's256', '8gAW2QxSrO5aRY7SbGnsBn15tnDg8ujdcTSJPDEstDA', 'google', '', '', '2024-03-22 14:08:31.925616+00', '2024-03-22 14:08:31.925616+00', 'oauth'),
+	('a55d1eff-8d5b-4823-a737-af29bae4a3b5', '6acf8a03-97b6-464b-8ad0-52df5187ccdd', 'faf6efeb-f727-438c-9487-a7a05ee203ce', 's256', '8r3qldJIEldC41KZ55LPqwxVBBkDDosVQQSpu8j4Dzk', 'google', 'ya29.a0Ad52N38jJshah58MpeVUM1jxMea50zkkDAW261cymQNfbWw00NxRklKQ1kvmAvNypcOZ5Wfcu1CatfdHUjTq7TV9ADueC8aQsxjIeTuemKVTOPwMsHFMzq7h_ZRbSCqZsgqhHjlV2R__Bb6BTQTN_Jm-StaYmqAPgxA-aCgYKAWMSARMSFQHGX2MiWPw5DAJmd1Xyo8e9xEQERQ0171', '1//095rMuabKFw5SCgYIARAAGAkSNwF-L9IrMAO5I5wziyyQ_HAIkxS8hl-H1LaABcBPT7celjq93zN4PZwd531xGZgpVSPpFar1lqA', '2024-03-22 14:10:12.582554+00', '2024-03-22 14:10:22.951355+00', 'oauth'),
+	('e7d82e26-9df3-4b66-9f79-ef6e81783033', '6acf8a03-97b6-464b-8ad0-52df5187ccdd', 'e0829bdc-9f21-457b-856f-020c674525cc', 's256', 'majDmgV_FkgHQ_LSMIdUGAaj4C8sbZG3JCH_Pxn7L08', 'google', 'ya29.a0Ad52N3_WU9NBCPCarG8D3f89LSt90JdY-sdkVGxMzW9dghyUYCz3adGccvZ8BW9Npts5_IUH21AHIQGTl0-FU_aofYXjK0OJ0MxkKq4B5xcy1ZLAKDxlFFAW1gxIp-J8XeBr4yKy_BILT7FtBZ_J_NEFChCOFbbVfMEGaCgYKAWMSARMSFQHGX2Mi7beptbtIx5Kh70yUJQCvLA0171', '1//09O7KF6vO6k17CgYIARAAGAkSNwF-L9IrCCsGxMfKviYJaOdtYlU59BOTsmumvaVcUTgjcZDe9GLICCaW0aeo17bepT0Bxk5gFNs', '2024-03-22 14:13:12.524485+00', '2024-03-22 14:13:21.901512+00', 'oauth');
 
 
 --
@@ -262,8 +307,10 @@ INSERT INTO "auth"."audit_log_entries" ("instance_id", "id", "payload", "created
 --
 
 INSERT INTO "auth"."users" ("instance_id", "id", "aud", "role", "email", "encrypted_password", "email_confirmed_at", "invited_at", "confirmation_token", "confirmation_sent_at", "recovery_token", "recovery_sent_at", "email_change_token_new", "email_change", "email_change_sent_at", "last_sign_in_at", "raw_app_meta_data", "raw_user_meta_data", "is_super_admin", "created_at", "updated_at", "phone", "phone_confirmed_at", "phone_change", "phone_change_token", "phone_change_sent_at", "email_change_token_current", "email_change_confirm_status", "banned_until", "reauthentication_token", "reauthentication_sent_at", "is_sso_user", "deleted_at") VALUES
+	('00000000-0000-0000-0000-000000000000', '02906fc4-7b24-47ec-abc3-6c6970be75bd', 'authenticated', 'authenticated', 'clark@packt.local', '$2a$10$rof0w3KYnDFgQSwbAB9tYOORaxwSkSFiP6s8ayuxTBytCmWm72D3a', '2024-03-24 09:55:03.824778+00', NULL, '', '2024-03-24 09:54:53.682463+00', '', NULL, '', '', NULL, '2024-03-24 09:55:03.825775+00', '{"tenants": ["packt"], "provider": "email", "providers": ["email"]}', '{}', NULL, '2024-03-24 09:54:53.65589+00', '2024-03-24 09:55:03.830793+00', NULL, NULL, '', '', NULL, '', 0, NULL, '', NULL, false, NULL),
+	('00000000-0000-0000-0000-000000000000', '631e3d0c-26a1-47f9-b19b-6942f5df2eb6', 'authenticated', 'authenticated', 'icecream@cool.local', '$2a$10$TInzust1m75k7NZcBvilTe5UDwp3dApfTKOJNCYbTAEnkEOUCyCXe', '2024-01-05 18:12:26.316064+00', NULL, '', NULL, '', '2024-02-20 20:43:38.953008+00', '', '', NULL, '2024-03-24 11:39:31.091954+00', '{"tenants": ["packt", "oddmonkey"], "provider": "email", "providers": ["email"]}', '{}', NULL, '2024-01-05 18:12:26.308851+00', '2024-03-25 14:37:10.416496+00', NULL, NULL, '', '', NULL, '', 0, NULL, '', NULL, false, NULL),
 	('00000000-0000-0000-0000-000000000000', 'f59a7592-2150-400b-8a37-f967594df8f9', 'authenticated', 'authenticated', 'other@packt.local', '$2a$10$d5WAWXhTUJzF9JdWkNyBTuI/rnReLSpaylhkxMs8yBuOlhevQwB9K', '2024-03-19 14:31:14.227636+00', NULL, '', '2024-03-19 14:25:16.747778+00', '', NULL, '', '', NULL, '2024-03-19 14:31:14.228622+00', '{"tenants": ["packt"], "provider": "email", "providers": ["email"]}', '{}', NULL, '2024-03-19 14:25:16.722627+00', '2024-03-21 15:46:18.581403+00', NULL, NULL, '', '', NULL, '', 0, NULL, '', NULL, false, NULL),
-	('00000000-0000-0000-0000-000000000000', '631e3d0c-26a1-47f9-b19b-6942f5df2eb6', 'authenticated', 'authenticated', 'icecream@cool.local', '$2a$10$TInzust1m75k7NZcBvilTe5UDwp3dApfTKOJNCYbTAEnkEOUCyCXe', '2024-01-05 18:12:26.316064+00', NULL, '', NULL, '', '2024-02-20 20:43:38.953008+00', '', '', NULL, '2024-03-21 15:47:19.730125+00', '{"tenants": ["packt", "oddmonkey"], "provider": "email", "providers": ["email"]}', '{}', NULL, '2024-01-05 18:12:26.308851+00', '2024-03-22 08:30:40.568495+00', NULL, NULL, '', '', NULL, '', 0, NULL, '', NULL, false, NULL);
+	('00000000-0000-0000-0000-000000000000', '99da03b3-6de9-4891-9b69-c5ed037523e9', 'authenticated', 'authenticated', 'sarah@activenode.learn', '$2a$10$WeWc7J7piwtGS2JuGa3opejpxOL8QH8eqsaAihSBrM3l0zIuwojC.', '2024-03-24 10:09:28.874425+00', NULL, '', '2024-03-24 09:57:00.7854+00', '', NULL, '', '', NULL, '2024-03-24 10:09:28.87486+00', '{"tenants": ["activenode"], "provider": "email", "providers": ["email"]}', '{}', NULL, '2024-03-24 09:57:00.763373+00', '2024-03-25 12:29:25.743713+00', NULL, NULL, '', '', NULL, '', 0, NULL, '', NULL, false, NULL);
 
 
 --
@@ -272,7 +319,9 @@ INSERT INTO "auth"."users" ("instance_id", "id", "aud", "role", "email", "encryp
 
 INSERT INTO "auth"."identities" ("provider_id", "user_id", "identity_data", "provider", "last_sign_in_at", "created_at", "updated_at", "id") VALUES
 	('631e3d0c-26a1-47f9-b19b-6942f5df2eb6', '631e3d0c-26a1-47f9-b19b-6942f5df2eb6', '{"sub": "631e3d0c-26a1-47f9-b19b-6942f5df2eb6", "email": "icecream@cool.local", "email_verified": false, "phone_verified": false}', 'email', '2024-01-05 18:12:26.311789+00', '2024-01-05 18:12:26.312057+00', '2024-01-05 18:12:26.312057+00', '51bf96d6-07f8-40fc-a4c7-3e28a89768b8'),
-	('f59a7592-2150-400b-8a37-f967594df8f9', 'f59a7592-2150-400b-8a37-f967594df8f9', '{"sub": "f59a7592-2150-400b-8a37-f967594df8f9", "email": "other@packt.local", "email_verified": false, "phone_verified": false}', 'email', '2024-03-19 14:25:16.723697+00', '2024-03-19 14:25:16.723721+00', '2024-03-19 14:25:16.723721+00', 'ff7d19f0-1df4-488d-89b4-31d691828908');
+	('f59a7592-2150-400b-8a37-f967594df8f9', 'f59a7592-2150-400b-8a37-f967594df8f9', '{"sub": "f59a7592-2150-400b-8a37-f967594df8f9", "email": "other@packt.local", "email_verified": false, "phone_verified": false}', 'email', '2024-03-19 14:25:16.723697+00', '2024-03-19 14:25:16.723721+00', '2024-03-19 14:25:16.723721+00', 'ff7d19f0-1df4-488d-89b4-31d691828908'),
+	('02906fc4-7b24-47ec-abc3-6c6970be75bd', '02906fc4-7b24-47ec-abc3-6c6970be75bd', '{"sub": "02906fc4-7b24-47ec-abc3-6c6970be75bd", "email": "clark@packt.local", "email_verified": false, "phone_verified": false}', 'email', '2024-03-24 09:54:53.656942+00', '2024-03-24 09:54:53.656966+00', '2024-03-24 09:54:53.656966+00', '7c8eeb58-45e5-422c-a3a9-f5bb5fc36908'),
+	('99da03b3-6de9-4891-9b69-c5ed037523e9', '99da03b3-6de9-4891-9b69-c5ed037523e9', '{"sub": "99da03b3-6de9-4891-9b69-c5ed037523e9", "email": "sarah@activenode.learn", "email_verified": false, "phone_verified": false}', 'email', '2024-03-24 09:57:00.764467+00', '2024-03-24 09:57:00.764491+00', '2024-03-24 09:57:00.764491+00', 'abda4701-d946-44fc-89b3-e67394771dd1');
 
 
 --
@@ -286,8 +335,9 @@ INSERT INTO "auth"."identities" ("provider_id", "user_id", "identity_data", "pro
 --
 
 INSERT INTO "auth"."sessions" ("id", "user_id", "created_at", "updated_at", "factor_id", "aal", "not_after", "refreshed_at", "user_agent", "ip", "tag") VALUES
-	('ae9929b0-3721-4394-a3d6-b58f504e5272', '631e3d0c-26a1-47f9-b19b-6942f5df2eb6', '2024-03-21 15:47:19.73018+00', '2024-03-21 15:47:19.73018+00', NULL, 'aal1', NULL, NULL, 'Mozilla/5.0 (Macintosh; Intel Mac OS X 10.15; rv:123.0) Gecko/20100101 Firefox/123.0', '172.19.0.1', NULL),
-	('a0780f23-475c-40e1-986e-fd283d3ac734', '631e3d0c-26a1-47f9-b19b-6942f5df2eb6', '2024-03-20 09:50:49.82953+00', '2024-03-22 08:30:40.571496+00', NULL, 'aal1', NULL, '2024-03-22 08:30:40.571367', 'Mozilla/5.0 (Macintosh; Intel Mac OS X 10_15_7) AppleWebKit/605.1.15 (KHTML, like Gecko) Version/17.2.1 Safari/605.1.15', '172.19.0.1', NULL);
+	('9ffc1e92-47d2-468e-83c5-3ac13b5932e4', '99da03b3-6de9-4891-9b69-c5ed037523e9', '2024-03-24 10:09:28.874893+00', '2024-03-25 12:29:25.745075+00', NULL, 'aal1', NULL, '2024-03-25 12:29:25.745023', 'Mozilla/5.0 (Macintosh; Intel Mac OS X 10.15; rv:124.0) Gecko/20100101 Firefox/124.0', '172.19.0.1', NULL),
+	('73a2d048-2bac-4a39-84c3-d23834beaf91', '631e3d0c-26a1-47f9-b19b-6942f5df2eb6', '2024-03-24 09:57:22.694962+00', '2024-03-25 14:37:10.449349+00', NULL, 'aal1', NULL, '2024-03-25 14:37:10.449263', 'Mozilla/5.0 (Macintosh; Intel Mac OS X 10.15; rv:124.0) Gecko/20100101 Firefox/124.0', '172.19.0.1', NULL),
+	('8e76e4ad-156c-4dbe-8490-b1892954c08c', '631e3d0c-26a1-47f9-b19b-6942f5df2eb6', '2024-03-24 11:39:31.091997+00', '2024-03-24 11:39:31.091997+00', NULL, 'aal1', NULL, NULL, 'Mozilla/5.0 (Macintosh; Intel Mac OS X 10_15_7) AppleWebKit/605.1.15 (KHTML, like Gecko) Version/17.2.1 Safari/605.1.15', '172.19.0.1', NULL);
 
 
 --
@@ -295,8 +345,9 @@ INSERT INTO "auth"."sessions" ("id", "user_id", "created_at", "updated_at", "fac
 --
 
 INSERT INTO "auth"."mfa_amr_claims" ("session_id", "created_at", "updated_at", "authentication_method", "id") VALUES
-	('a0780f23-475c-40e1-986e-fd283d3ac734', '2024-03-20 09:50:49.831503+00', '2024-03-20 09:50:49.831503+00', 'password', 'b274b72c-e2c5-46df-a3ae-fa7c90a31797'),
-	('ae9929b0-3721-4394-a3d6-b58f504e5272', '2024-03-21 15:47:19.732235+00', '2024-03-21 15:47:19.732235+00', 'password', '82cbe19d-9b9e-4f6a-bb5a-0f9c8dd8c09f');
+	('73a2d048-2bac-4a39-84c3-d23834beaf91', '2024-03-24 09:57:22.69665+00', '2024-03-24 09:57:22.69665+00', 'password', '8df2587a-7ce1-441e-b998-e7323e96abfd'),
+	('9ffc1e92-47d2-468e-83c5-3ac13b5932e4', '2024-03-24 10:09:28.877328+00', '2024-03-24 10:09:28.877328+00', 'otp', '684f151b-5ea3-43f0-869e-d8c9640e43fb'),
+	('8e76e4ad-156c-4dbe-8490-b1892954c08c', '2024-03-24 11:39:31.093864+00', '2024-03-24 11:39:31.093864+00', 'password', '1bc0566d-8419-43b4-a103-c9fffba05a2d');
 
 
 --
@@ -316,24 +367,16 @@ INSERT INTO "auth"."mfa_amr_claims" ("session_id", "created_at", "updated_at", "
 --
 
 INSERT INTO "auth"."refresh_tokens" ("instance_id", "id", "token", "user_id", "revoked", "created_at", "updated_at", "parent", "session_id") VALUES
-	('00000000-0000-0000-0000-000000000000', 228, 'rqFd2WTLuyo0lkvn4Cl59g', '631e3d0c-26a1-47f9-b19b-6942f5df2eb6', true, '2024-03-21 12:29:50.285601+00', '2024-03-21 13:32:33.36771+00', 'HzFBeqmOWlPibKEPPAHe2Q', 'a0780f23-475c-40e1-986e-fd283d3ac734'),
-	('00000000-0000-0000-0000-000000000000', 229, 'KFEPGQUsemAgb_ETaETXzA', '631e3d0c-26a1-47f9-b19b-6942f5df2eb6', true, '2024-03-21 13:32:33.368478+00', '2024-03-21 14:30:38.206538+00', 'rqFd2WTLuyo0lkvn4Cl59g', 'a0780f23-475c-40e1-986e-fd283d3ac734'),
-	('00000000-0000-0000-0000-000000000000', 231, 'DmO5bXUQm_BjQaKsx4lvAA', '631e3d0c-26a1-47f9-b19b-6942f5df2eb6', true, '2024-03-21 14:30:38.207168+00', '2024-03-21 15:28:52.372177+00', 'KFEPGQUsemAgb_ETaETXzA', 'a0780f23-475c-40e1-986e-fd283d3ac734'),
-	('00000000-0000-0000-0000-000000000000', 234, '4EP5WKnkHgT7L3rxF0TodA', '631e3d0c-26a1-47f9-b19b-6942f5df2eb6', false, '2024-03-21 15:47:19.731125+00', '2024-03-21 15:47:19.731125+00', NULL, 'ae9929b0-3721-4394-a3d6-b58f504e5272'),
-	('00000000-0000-0000-0000-000000000000', 232, 'aTIle8qu5uqIhDyEO-CkFQ', '631e3d0c-26a1-47f9-b19b-6942f5df2eb6', true, '2024-03-21 15:28:52.372827+00', '2024-03-21 16:27:03.860879+00', 'DmO5bXUQm_BjQaKsx4lvAA', 'a0780f23-475c-40e1-986e-fd283d3ac734'),
-	('00000000-0000-0000-0000-000000000000', 235, '9UFSYIuvKO8XsP1vF_w3ug', '631e3d0c-26a1-47f9-b19b-6942f5df2eb6', true, '2024-03-21 16:27:03.861843+00', '2024-03-21 21:24:09.868006+00', 'aTIle8qu5uqIhDyEO-CkFQ', 'a0780f23-475c-40e1-986e-fd283d3ac734'),
-	('00000000-0000-0000-0000-000000000000', 236, '6Ab-p7swhTHjnKnpXNiy9Q', '631e3d0c-26a1-47f9-b19b-6942f5df2eb6', true, '2024-03-21 21:24:09.868807+00', '2024-03-22 08:30:40.542152+00', '9UFSYIuvKO8XsP1vF_w3ug', 'a0780f23-475c-40e1-986e-fd283d3ac734'),
-	('00000000-0000-0000-0000-000000000000', 237, 'iifdPs6HrmHIb0c6qfC8mQ', '631e3d0c-26a1-47f9-b19b-6942f5df2eb6', false, '2024-03-22 08:30:40.564439+00', '2024-03-22 08:30:40.564439+00', '6Ab-p7swhTHjnKnpXNiy9Q', 'a0780f23-475c-40e1-986e-fd283d3ac734'),
-	('00000000-0000-0000-0000-000000000000', 214, '6vWmSKOIo4zKQLO4P778tw', '631e3d0c-26a1-47f9-b19b-6942f5df2eb6', true, '2024-03-20 09:50:49.830347+00', '2024-03-20 10:48:54.562405+00', NULL, 'a0780f23-475c-40e1-986e-fd283d3ac734'),
-	('00000000-0000-0000-0000-000000000000', 215, 'SxTv1LW8DSmhX4hFoLmYhw', '631e3d0c-26a1-47f9-b19b-6942f5df2eb6', true, '2024-03-20 10:48:54.564286+00', '2024-03-20 11:47:10.521689+00', '6vWmSKOIo4zKQLO4P778tw', 'a0780f23-475c-40e1-986e-fd283d3ac734'),
-	('00000000-0000-0000-0000-000000000000', 217, 'DlTDJFFt5FuQtCg1e-4biA', '631e3d0c-26a1-47f9-b19b-6942f5df2eb6', true, '2024-03-20 11:47:10.523019+00', '2024-03-20 12:45:21.820106+00', 'SxTv1LW8DSmhX4hFoLmYhw', 'a0780f23-475c-40e1-986e-fd283d3ac734'),
-	('00000000-0000-0000-0000-000000000000', 218, '-P_nN_VgeS2D91UyPQBvtQ', '631e3d0c-26a1-47f9-b19b-6942f5df2eb6', true, '2024-03-20 12:45:21.820728+00', '2024-03-20 13:58:20.233239+00', 'DlTDJFFt5FuQtCg1e-4biA', 'a0780f23-475c-40e1-986e-fd283d3ac734'),
-	('00000000-0000-0000-0000-000000000000', 219, 'zuuAU6B76GhZzLXm5vcrKw', '631e3d0c-26a1-47f9-b19b-6942f5df2eb6', true, '2024-03-20 13:58:20.246904+00', '2024-03-20 15:20:38.102789+00', '-P_nN_VgeS2D91UyPQBvtQ', 'a0780f23-475c-40e1-986e-fd283d3ac734'),
-	('00000000-0000-0000-0000-000000000000', 220, 'CsZvqRXv4RihK8pNJuEMXw', '631e3d0c-26a1-47f9-b19b-6942f5df2eb6', true, '2024-03-20 15:20:38.104493+00', '2024-03-20 16:24:28.500224+00', 'zuuAU6B76GhZzLXm5vcrKw', 'a0780f23-475c-40e1-986e-fd283d3ac734'),
-	('00000000-0000-0000-0000-000000000000', 221, '1QcmQsjhpMxplyHsCvYQGw', '631e3d0c-26a1-47f9-b19b-6942f5df2eb6', true, '2024-03-20 16:24:28.50766+00', '2024-03-21 09:13:51.767852+00', 'CsZvqRXv4RihK8pNJuEMXw', 'a0780f23-475c-40e1-986e-fd283d3ac734'),
-	('00000000-0000-0000-0000-000000000000', 223, '-rGDig83aDrjk5es6FJiRA', '631e3d0c-26a1-47f9-b19b-6942f5df2eb6', true, '2024-03-21 09:13:51.770156+00', '2024-03-21 10:33:26.557905+00', '1QcmQsjhpMxplyHsCvYQGw', 'a0780f23-475c-40e1-986e-fd283d3ac734'),
-	('00000000-0000-0000-0000-000000000000', 224, '3JTqxKCq6UvEi2cWJJLQCg', '631e3d0c-26a1-47f9-b19b-6942f5df2eb6', true, '2024-03-21 10:33:26.559317+00', '2024-03-21 11:31:45.533564+00', '-rGDig83aDrjk5es6FJiRA', 'a0780f23-475c-40e1-986e-fd283d3ac734'),
-	('00000000-0000-0000-0000-000000000000', 226, 'HzFBeqmOWlPibKEPPAHe2Q', '631e3d0c-26a1-47f9-b19b-6942f5df2eb6', true, '2024-03-21 11:31:45.534598+00', '2024-03-21 12:29:50.284355+00', '3JTqxKCq6UvEi2cWJJLQCg', 'a0780f23-475c-40e1-986e-fd283d3ac734');
+	('00000000-0000-0000-0000-000000000000', 252, 'ZzyXMiQVRj6oqZPnZIFtdw', '631e3d0c-26a1-47f9-b19b-6942f5df2eb6', true, '2024-03-25 13:27:49.36114+00', '2024-03-25 14:37:10.414703+00', 'StVVMf_5lNPLXOzAQA_SRw', '73a2d048-2bac-4a39-84c3-d23834beaf91'),
+	('00000000-0000-0000-0000-000000000000', 253, 'y5B0LGIv9BS6Rfzz4-YU9g', '631e3d0c-26a1-47f9-b19b-6942f5df2eb6', false, '2024-03-25 14:37:10.415418+00', '2024-03-25 14:37:10.415418+00', 'ZzyXMiQVRj6oqZPnZIFtdw', '73a2d048-2bac-4a39-84c3-d23834beaf91'),
+	('00000000-0000-0000-0000-000000000000', 244, 'ao4R2cE7_990bdDRzJMDKQ', '631e3d0c-26a1-47f9-b19b-6942f5df2eb6', true, '2024-03-24 09:57:22.695681+00', '2024-03-24 11:38:38.491485+00', NULL, '73a2d048-2bac-4a39-84c3-d23834beaf91'),
+	('00000000-0000-0000-0000-000000000000', 247, 'IY83uCZ5PxqFRPctaiDdyQ', '631e3d0c-26a1-47f9-b19b-6942f5df2eb6', false, '2024-03-24 11:39:31.09277+00', '2024-03-24 11:39:31.09277+00', NULL, '8e76e4ad-156c-4dbe-8490-b1892954c08c'),
+	('00000000-0000-0000-0000-000000000000', 246, 'eZO253JbvWdR7_D4vxgFAQ', '631e3d0c-26a1-47f9-b19b-6942f5df2eb6', true, '2024-03-24 11:38:38.492217+00', '2024-03-25 09:20:06.644544+00', 'ao4R2cE7_990bdDRzJMDKQ', '73a2d048-2bac-4a39-84c3-d23834beaf91'),
+	('00000000-0000-0000-0000-000000000000', 248, 'JZXPEe_y2HUjGU5yTdY30Q', '631e3d0c-26a1-47f9-b19b-6942f5df2eb6', true, '2024-03-25 09:20:06.645482+00', '2024-03-25 11:06:10.765682+00', 'eZO253JbvWdR7_D4vxgFAQ', '73a2d048-2bac-4a39-84c3-d23834beaf91'),
+	('00000000-0000-0000-0000-000000000000', 245, 'n-oc-8YpPmFvpPY65jfZew', '99da03b3-6de9-4891-9b69-c5ed037523e9', true, '2024-03-24 10:09:28.875904+00', '2024-03-25 12:29:25.741969+00', NULL, '9ffc1e92-47d2-468e-83c5-3ac13b5932e4'),
+	('00000000-0000-0000-0000-000000000000', 250, 'qgKiKUOtHeivFQJZTAUl5A', '99da03b3-6de9-4891-9b69-c5ed037523e9', false, '2024-03-25 12:29:25.742682+00', '2024-03-25 12:29:25.742682+00', 'n-oc-8YpPmFvpPY65jfZew', '9ffc1e92-47d2-468e-83c5-3ac13b5932e4'),
+	('00000000-0000-0000-0000-000000000000', 249, 'NdHOsgzV4YFz130apfbRbw', '631e3d0c-26a1-47f9-b19b-6942f5df2eb6', true, '2024-03-25 11:06:10.766221+00', '2024-03-25 12:29:27.633329+00', 'JZXPEe_y2HUjGU5yTdY30Q', '73a2d048-2bac-4a39-84c3-d23834beaf91'),
+	('00000000-0000-0000-0000-000000000000', 251, 'StVVMf_5lNPLXOzAQA_SRw', '631e3d0c-26a1-47f9-b19b-6942f5df2eb6', true, '2024-03-25 12:29:27.633739+00', '2024-03-25 13:27:49.36059+00', 'NdHOsgzV4YFz130apfbRbw', '73a2d048-2bac-4a39-84c3-d23834beaf91');
 
 
 --
@@ -370,9 +413,11 @@ INSERT INTO "auth"."refresh_tokens" ("instance_id", "id", "token", "user_id", "r
 -- Data for Name: service_users; Type: TABLE DATA; Schema: public; Owner: postgres
 --
 
-INSERT INTO "public"."service_users" ("id", "created_at", "supabase_user", "full_name") VALUES
-	(1, '2024-01-23 15:00:51.078963+00', '631e3d0c-26a1-47f9-b19b-6942f5df2eb6', 'David Lorenz'),
-	(14, '2024-03-19 14:25:16.734549+00', 'f59a7592-2150-400b-8a37-f967594df8f9', 'Other');
+INSERT INTO "public"."service_users" ("id", "created_at", "supabase_user", "full_name", "is_available", "job_title") VALUES
+	(1, '2024-01-23 15:00:51.078963+00', '631e3d0c-26a1-47f9-b19b-6942f5df2eb6', 'David Lorenz', true, 'Architect'),
+	(15, '2024-03-24 09:54:53.667391+00', '02906fc4-7b24-47ec-abc3-6c6970be75bd', 'Clark Trepton', true, 'Team Manager'),
+	(14, '2024-03-19 14:25:16.734549+00', 'f59a7592-2150-400b-8a37-f967594df8f9', 'Other', false, 'Project Manager'),
+	(16, '2024-03-24 09:57:00.774255+00', '99da03b3-6de9-4891-9b69-c5ed037523e9', 'Sarah Port', false, 'Engineer');
 
 
 --
@@ -392,28 +437,31 @@ INSERT INTO "public"."tenants" ("id", "created_at", "name", "domain") VALUES
 INSERT INTO "public"."tenant_permissions" ("id", "created_at", "service_user", "tenant") VALUES
 	(1, '2030-01-31 08:58:28+00', 1, 'packt'),
 	(2, '2030-01-31 08:58:38+00', 1, 'oddmonkey'),
-	(12, '2024-03-19 14:25:16.74138+00', 14, 'packt');
+	(12, '2024-03-19 14:25:16.74138+00', 14, 'packt'),
+	(13, '2024-03-24 09:54:53.675005+00', 15, 'packt'),
+	(14, '2024-03-24 09:57:00.778987+00', 16, 'activenode');
 
 
 --
 -- Data for Name: tickets; Type: TABLE DATA; Schema: public; Owner: postgres
 --
 
-INSERT INTO "public"."tickets" ("id", "created_at", "title", "description", "created_by", "tenant", "status", "author_name") VALUES
-	(2, '2024-03-19 14:16:07.588245+00', 'Learn more about Next.js', 'Next.js is a great tool for creating production applications', 1, 'packt', 'open', 'David Lorenz'),
-	(3, '2024-03-19 14:16:47.572412+00', 'Implement AI search with pgvector', 'Let''s implement a wonderful, content-based search', 1, 'packt', 'open', 'David Lorenz'),
-	(4, '2024-03-19 14:17:39.859252+00', 'Build a concept for your own startup', 'You can do it!', 1, 'packt', 'open', 'David Lorenz'),
-	(5, '2024-03-19 14:19:23.018632+00', 'Subscribe @activenode on YouTube', 'It''s worth it', 1, 'packt', 'open', 'David Lorenz'),
-	(6, '2024-03-19 14:19:50.391732+00', 'Read more packt books', 'Become a wonderful engineer', 1, 'packt', 'open', 'David Lorenz'),
-	(7, '2024-03-19 14:31:38.886812+00', 'Make sure to create more tickets', 'Or else we won''t have enough data to filter and test', 14, 'packt', 'open', 'Other'),
-	(8, '2024-03-19 14:32:03.629425+00', 'Take a break after coding', 'Make yourself a good drink or a healthy meal', 14, 'packt', 'open', 'Other'),
-	(9, '2024-03-19 14:32:57.746782+00', 'Put some plants in the room', 'It really helps and Monstera plants are easy to handle', 14, 'packt', 'open', 'Other'),
-	(10, '2024-03-19 14:33:27.814411+00', 'Stay friendly ', 'Friendliness is paid pack with friendliness and help, even if the other side doesn''t immediately respond friendly.', 14, 'packt', 'open', 'Other'),
-	(11, '2024-03-19 14:34:22.256265+00', 'Buy a standing desk', 'It helps not getting back pain', 14, 'packt', 'open', 'Other'),
-	(12, '2024-03-19 14:35:33.260424+00', 'Get a radio alarm ', '...and remove your smartphone from the bedroom :)', 14, 'packt', 'open', 'Other'),
-	(13, '2024-03-19 14:36:17.114092+00', 'Promote your own stuff', 'Don''t be too humble, no one will know what you do when you don''t tell.', 14, 'packt', 'open', 'Other'),
-	(14, '2024-03-19 14:37:02.376117+00', 'Leave a good trace in this world', 'Do what you can do to make the world a better place', 14, 'packt', 'open', 'Other'),
-	(1, '2024-03-19 11:21:47.383329+00', 'Make sure to show the author''s name', 'Showing the author name in the ticket is important', 1, 'packt', 'open', 'David Lorenz');
+INSERT INTO "public"."tickets" ("id", "created_at", "title", "description", "created_by", "tenant", "status", "author_name", "assignee", "assignee_name") VALUES
+	(2, '2024-03-19 14:16:07.588245+00', 'Learn more about Next.js', 'Next.js is a great tool for creating production applications', 1, 'packt', 'open', 'David Lorenz', NULL, NULL),
+	(3, '2024-03-19 14:16:47.572412+00', 'Implement AI search with pgvector', 'Let''s implement a wonderful, content-based search', 1, 'packt', 'open', 'David Lorenz', NULL, NULL),
+	(4, '2024-03-19 14:17:39.859252+00', 'Build a concept for your own startup', 'You can do it!', 1, 'packt', 'open', 'David Lorenz', NULL, NULL),
+	(5, '2024-03-19 14:19:23.018632+00', 'Subscribe @activenode on YouTube', 'It''s worth it', 1, 'packt', 'open', 'David Lorenz', NULL, NULL),
+	(6, '2024-03-19 14:19:50.391732+00', 'Read more packt books', 'Become a wonderful engineer', 1, 'packt', 'open', 'David Lorenz', NULL, NULL),
+	(7, '2024-03-19 14:31:38.886812+00', 'Make sure to create more tickets', 'Or else we won''t have enough data to filter and test', 14, 'packt', 'open', 'Other', NULL, NULL),
+	(8, '2024-03-19 14:32:03.629425+00', 'Take a break after coding', 'Make yourself a good drink or a healthy meal', 14, 'packt', 'open', 'Other', NULL, NULL),
+	(9, '2024-03-19 14:32:57.746782+00', 'Put some plants in the room', 'It really helps and Monstera plants are easy to handle', 14, 'packt', 'open', 'Other', NULL, NULL),
+	(10, '2024-03-19 14:33:27.814411+00', 'Stay friendly ', 'Friendliness is paid pack with friendliness and help, even if the other side doesn''t immediately respond friendly.', 14, 'packt', 'open', 'Other', NULL, NULL),
+	(11, '2024-03-19 14:34:22.256265+00', 'Buy a standing desk', 'It helps not getting back pain', 14, 'packt', 'open', 'Other', NULL, NULL),
+	(12, '2024-03-19 14:35:33.260424+00', 'Get a radio alarm ', '...and remove your smartphone from the bedroom :)', 14, 'packt', 'open', 'Other', NULL, NULL),
+	(13, '2024-03-19 14:36:17.114092+00', 'Promote your own stuff', 'Don''t be too humble, no one will know what you do when you don''t tell.', 14, 'packt', 'open', 'Other', NULL, NULL),
+	(14, '2024-03-19 14:37:02.376117+00', 'Leave a good trace in this world', 'Do what you can do to make the world a better place', 14, 'packt', 'open', 'Other', NULL, NULL),
+	(1, '2024-03-19 11:21:47.383329+00', 'Make sure to show the author''s name', 'Showing the author name in the ticket is important', 1, 'packt', 'open', 'David Lorenz', NULL, NULL),
+	(17, '2024-03-25 12:41:24.605599+00', 'Creating my first ticket with an assignee', 'Initially the assignee was set to Clark Trepton.', 1, 'packt', 'open', 'David Lorenz', NULL, NULL);
 
 
 --
@@ -444,7 +492,7 @@ INSERT INTO "public"."tickets" ("id", "created_at", "title", "description", "cre
 -- Name: refresh_tokens_id_seq; Type: SEQUENCE SET; Schema: auth; Owner: supabase_auth_admin
 --
 
-SELECT pg_catalog.setval('"auth"."refresh_tokens_id_seq"', 237, true);
+SELECT pg_catalog.setval('"auth"."refresh_tokens_id_seq"', 253, true);
 
 
 --
@@ -458,21 +506,21 @@ SELECT pg_catalog.setval('"pgsodium"."key_key_id_seq"', 1, false);
 -- Name: service_users_id_seq; Type: SEQUENCE SET; Schema: public; Owner: postgres
 --
 
-SELECT pg_catalog.setval('"public"."service_users_id_seq"', 14, true);
+SELECT pg_catalog.setval('"public"."service_users_id_seq"', 16, true);
 
 
 --
 -- Name: tenant_permissions_id_seq; Type: SEQUENCE SET; Schema: public; Owner: postgres
 --
 
-SELECT pg_catalog.setval('"public"."tenant_permissions_id_seq"', 12, true);
+SELECT pg_catalog.setval('"public"."tenant_permissions_id_seq"', 14, true);
 
 
 --
 -- Name: tickets_id_seq; Type: SEQUENCE SET; Schema: public; Owner: postgres
 --
 
-SELECT pg_catalog.setval('"public"."tickets_id_seq"', 16, true);
+SELECT pg_catalog.setval('"public"."tickets_id_seq"', 17, true);
 
 
 --
