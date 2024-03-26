@@ -28,7 +28,7 @@ export default async function TicketDetailsPage({ params }) {
 
   return (
     <TicketDetails
-      id={params.id}
+      id={ticket.id}
       tenant={ticket.tenant}
       title={title}
       description={description}
