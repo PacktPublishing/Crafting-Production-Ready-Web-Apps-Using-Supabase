@@ -3,26 +3,15 @@ import { useRef } from "react";
 import classes from "./TicketDetails.module.css";
 import { getSupabaseBrowserClient } from "@/supabase-utils/browserClient";
 
-const comments = [
-  {
-    author: "Dave",
-    date: "2027-01-01",
-    content: "This is a comment from Dave",
-  },
-  {
-    author: "Alice",
-    date: "2027-01-02",
-    content: "This is a comment from Alice",
-  },
-];
-
-export function TicketComments({ ticket }) {
+export function TicketComments({ ticket, initialComments }) {
   const commentRef = useRef(null);
   const supabase = getSupabaseBrowserClient();
 
+  const comments = initialComments || [];
+
   return (
     <footer>
-      <h4>Comments</h4>
+      <h4>Comments ({comments.length})</h4>
 
       <form
         onSubmit={(event) => {
@@ -51,10 +40,10 @@ export function TicketComments({ ticket }) {
 
       <section>
         {comments.map((comment) => (
-          <article key={comment.date} className={classes.comment}>
-            <strong>{comment.author} </strong>
-            <time>{comment.date}</time>
-            <p>{comment.content}</p>
+          <article key={comment.id} className={classes.comment}>
+            <strong>{comment.author_name} </strong>
+            <time>{new Date(comment.created_at).toLocaleString("en-US")}</time>
+            <p>{comment.comment_text}</p>
           </article>
         ))}
       </section>

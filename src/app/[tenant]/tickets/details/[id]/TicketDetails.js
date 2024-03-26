@@ -17,6 +17,7 @@ export function TicketDetails({
   dateString,
   isAuthor,
   assignee,
+  initialComments,
 }) {
   const supabase = getSupabaseBrowserClient();
   const router = useRouter();
@@ -80,7 +81,7 @@ export function TicketDetails({
 
       <section>{description}</section>
 
-      <TicketComments ticket={id} />
+      <TicketComments ticket={id} initialComments={initialComments} />
     </article>
   );
 }
