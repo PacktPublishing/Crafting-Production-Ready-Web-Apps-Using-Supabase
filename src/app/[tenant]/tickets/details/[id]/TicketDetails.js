@@ -80,7 +80,7 @@ export function TicketDetails({
 
       <section>{description}</section>
 
-      <TicketComments />
+      <TicketComments ticket={id} />
     </article>
   );
 }
