@@ -19,14 +19,25 @@ SET client_min_messages = warning;
 SET row_security = off;
 
 --
+-- Data for Name: audit_log_entries; Type: TABLE DATA; Schema: auth; Owner: supabase_auth_admin
+--
+
+
+--
+-- Data for Name: flow_state; Type: TABLE DATA; Schema: auth; Owner: supabase_auth_admin
+--
+
+
+
+--
 -- Data for Name: users; Type: TABLE DATA; Schema: auth; Owner: supabase_auth_admin
 --
 
 INSERT INTO "auth"."users" ("instance_id", "id", "aud", "role", "email", "encrypted_password", "email_confirmed_at", "invited_at", "confirmation_token", "confirmation_sent_at", "recovery_token", "recovery_sent_at", "email_change_token_new", "email_change", "email_change_sent_at", "last_sign_in_at", "raw_app_meta_data", "raw_user_meta_data", "is_super_admin", "created_at", "updated_at", "phone", "phone_confirmed_at", "phone_change", "phone_change_token", "phone_change_sent_at", "email_change_token_current", "email_change_confirm_status", "banned_until", "reauthentication_token", "reauthentication_sent_at", "is_sso_user", "deleted_at") VALUES
 	('00000000-0000-0000-0000-000000000000', '02906fc4-7b24-47ec-abc3-6c6970be75bd', 'authenticated', 'authenticated', 'clark@packt.local', '$2a$10$rof0w3KYnDFgQSwbAB9tYOORaxwSkSFiP6s8ayuxTBytCmWm72D3a', '2024-03-24 09:55:03.824778+00', NULL, '', '2024-03-24 09:54:53.682463+00', '', NULL, '', '', NULL, '2024-03-24 09:55:03.825775+00', '{"tenants": ["packt"], "provider": "email", "providers": ["email"]}', '{}', NULL, '2024-03-24 09:54:53.65589+00', '2024-03-24 09:55:03.830793+00', NULL, NULL, '', '', NULL, '', 0, NULL, '', NULL, false, NULL),
 	('00000000-0000-0000-0000-000000000000', 'f59a7592-2150-400b-8a37-f967594df8f9', 'authenticated', 'authenticated', 'other@packt.local', '$2a$10$d5WAWXhTUJzF9JdWkNyBTuI/rnReLSpaylhkxMs8yBuOlhevQwB9K', '2024-03-19 14:31:14.227636+00', NULL, '', '2024-03-19 14:25:16.747778+00', '', NULL, '', '', NULL, '2024-03-19 14:31:14.228622+00', '{"tenants": ["packt"], "provider": "email", "providers": ["email"]}', '{}', NULL, '2024-03-19 14:25:16.722627+00', '2024-03-21 15:46:18.581403+00', NULL, NULL, '', '', NULL, '', 0, NULL, '', NULL, false, NULL),
-	('00000000-0000-0000-0000-000000000000', '631e3d0c-26a1-47f9-b19b-6942f5df2eb6', 'authenticated', 'authenticated', 'icecream@cool.local', '$2a$10$TInzust1m75k7NZcBvilTe5UDwp3dApfTKOJNCYbTAEnkEOUCyCXe', '2024-01-05 18:12:26.316064+00', NULL, '', NULL, '', '2024-02-20 20:43:38.953008+00', '', '', NULL, '2024-03-26 11:05:37.17724+00', '{"tenants": ["packt", "oddmonkey"], "provider": "email", "providers": ["email"]}', '{}', NULL, '2024-01-05 18:12:26.308851+00', '2024-03-26 11:05:37.179698+00', NULL, NULL, '', '', NULL, '', 0, NULL, '', NULL, false, NULL),
-	('00000000-0000-0000-0000-000000000000', '99da03b3-6de9-4891-9b69-c5ed037523e9', 'authenticated', 'authenticated', 'sarah@activenode.learn', '$2a$10$WeWc7J7piwtGS2JuGa3opejpxOL8QH8eqsaAihSBrM3l0zIuwojC.', '2024-03-24 10:09:28.874425+00', NULL, '', '2024-03-24 09:57:00.7854+00', '', NULL, '', '', NULL, '2024-03-26 11:06:32.504079+00', '{"tenants": ["activenode"], "provider": "email", "providers": ["email"]}', '{}', NULL, '2024-03-24 09:57:00.763373+00', '2024-03-26 11:06:32.505556+00', NULL, NULL, '', '', NULL, '', 0, NULL, '', NULL, false, NULL);
+	('00000000-0000-0000-0000-000000000000', '99da03b3-6de9-4891-9b69-c5ed037523e9', 'authenticated', 'authenticated', 'sarah@activenode.learn', '$2a$10$WeWc7J7piwtGS2JuGa3opejpxOL8QH8eqsaAihSBrM3l0zIuwojC.', '2024-03-24 10:09:28.874425+00', NULL, '', '2024-03-24 09:57:00.7854+00', '', NULL, '', '', NULL, '2024-03-26 12:12:41.978288+00', '{"tenants": ["activenode"], "provider": "email", "providers": ["email"]}', '{}', NULL, '2024-03-24 09:57:00.763373+00', '2024-03-26 13:34:51.76764+00', NULL, NULL, '', '', NULL, '', 0, NULL, '', NULL, false, NULL),
+	('00000000-0000-0000-0000-000000000000', '631e3d0c-26a1-47f9-b19b-6942f5df2eb6', 'authenticated', 'authenticated', 'icecream@cool.local', '$2a$10$TInzust1m75k7NZcBvilTe5UDwp3dApfTKOJNCYbTAEnkEOUCyCXe', '2024-01-05 18:12:26.316064+00', NULL, '', NULL, '', '2024-02-20 20:43:38.953008+00', '', '', NULL, '2024-03-26 12:36:22.475656+00', '{"tenants": ["packt", "oddmonkey"], "provider": "email", "providers": ["email"]}', '{}', NULL, '2024-01-05 18:12:26.308851+00', '2024-03-26 13:40:59.84797+00', NULL, NULL, '', '', NULL, '', 0, NULL, '', NULL, false, NULL);
 
 
 --
@@ -56,11 +67,6 @@ INSERT INTO "auth"."identities" ("provider_id", "user_id", "identity_data", "pro
 -- Data for Name: mfa_challenges; Type: TABLE DATA; Schema: auth; Owner: supabase_auth_admin
 --
 
-
-
---
--- Data for Name: refresh_tokens; Type: TABLE DATA; Schema: auth; Owner: supabase_auth_admin
---
 
 
 --
@@ -133,14 +139,19 @@ INSERT INTO "public"."tickets" ("id", "created_at", "title", "description", "cre
 	(13, '2024-03-19 14:36:17.114092+00', 'Promote your own stuff', 'Don''t be too humble, no one will know what you do when you don''t tell.', 14, 'packt', 'open', 'Other', NULL, NULL),
 	(14, '2024-03-19 14:37:02.376117+00', 'Leave a good trace in this world', 'Do what you can do to make the world a better place', 14, 'packt', 'open', 'Other', NULL, NULL),
 	(1, '2024-03-19 11:21:47.383329+00', 'Make sure to show the author''s name', 'Showing the author name in the ticket is important', 1, 'packt', 'open', 'David Lorenz', NULL, NULL),
-	(17, '2024-03-25 12:41:24.605599+00', 'Creating my first ticket with an assignee', 'Initially the assignee was set to Clark Trepton.', 1, 'packt', 'open', 'David Lorenz', NULL, NULL),
-	(18, '2024-03-26 11:06:52.091522+00', 'Just a ticket on activenode.learn', 'Hello there!', 16, 'activenode', 'open', 'Sarah Port', NULL, NULL);
+	(18, '2024-03-26 11:06:52.091522+00', 'Just a ticket on activenode.learn', 'Hello there!', 16, 'activenode', 'open', 'Sarah Port', NULL, NULL),
+	(17, '2024-03-25 12:41:24.605599+00', 'Creating my first ticket with an assignee', 'Initially the assignee was set to Clark Trepton.', 1, 'packt', 'open', 'David Lorenz', 1, 'David Lorenz'),
+	(19, '2024-03-26 13:36:47.160953+00', 'Bake a cake!', 'Whoever wants to do it, I''d be happy to eat it.', 16, 'activenode', 'open', 'Sarah Port', NULL, NULL);
 
 
 --
 -- Data for Name: comments; Type: TABLE DATA; Schema: public; Owner: postgres
 --
 
+INSERT INTO "public"."comments" ("id", "created_at", "tenant", "created_by", "author_name", "comment_text", "ticket") VALUES
+	(3, '2024-03-26 12:21:49.088216+00', 'activenode', 16, 'Sarah Port', 'A lovely comment section!', 18),
+	(4, '2024-03-26 12:23:28.305001+00', 'activenode', 16, 'Sarah Port', 'Another comment', 18),
+	(5, '2024-03-26 12:36:43.718334+00', 'packt', 1, 'David Lorenz', 'A wonderful comment in the packt tenant', 17);
 
 
 --
@@ -183,7 +194,7 @@ INSERT INTO "public"."tenant_permissions" ("id", "created_at", "service_user", "
 -- Name: refresh_tokens_id_seq; Type: SEQUENCE SET; Schema: auth; Owner: supabase_auth_admin
 --
 
-SELECT pg_catalog.setval('"auth"."refresh_tokens_id_seq"', 255, true);
+SELECT pg_catalog.setval('"auth"."refresh_tokens_id_seq"', 259, true);
 
 
 --
@@ -197,7 +208,7 @@ SELECT pg_catalog.setval('"pgsodium"."key_key_id_seq"', 1, false);
 -- Name: comments_id_seq; Type: SEQUENCE SET; Schema: public; Owner: postgres
 --
 
-SELECT pg_catalog.setval('"public"."comments_id_seq"', 1, false);
+SELECT pg_catalog.setval('"public"."comments_id_seq"', 5, true);
 
 
 --
@@ -218,7 +229,7 @@ SELECT pg_catalog.setval('"public"."tenant_permissions_id_seq"', 14, true);
 -- Name: tickets_id_seq; Type: SEQUENCE SET; Schema: public; Owner: postgres
 --
 
-SELECT pg_catalog.setval('"public"."tickets_id_seq"', 18, true);
+SELECT pg_catalog.setval('"public"."tickets_id_seq"', 19, true);
 
 
 --
