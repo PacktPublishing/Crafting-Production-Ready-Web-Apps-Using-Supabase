@@ -19,8 +19,8 @@ CREATE OR REPLACE FUNCTION rls_helpers.is_same_user(service_user_id bigint)
 AS $function$BEGIN
   RETURN (
     EXISTS (
-     SELECT FROM service_users 
-     WHERE 
+     SELECT FROM service_users
+     WHERE
       id=service_user_id AND
       supabase_user = auth.uid()
     )
@@ -48,7 +48,7 @@ CREATE OR REPLACE FUNCTION public.derive_tenant_from_ticket()
  RETURNS trigger
  LANGUAGE plpgsql
 AS $function$BEGIN
-  NEW.tenant = (SELECT t.tenant FROM tickets t WHERE t.id = ticket);
+  NEW.tenant = (SELECT t.tenant FROM tickets t WHERE t.id = NEW.ticket);
   RETURN NEW;
 END;$function$
 ;
@@ -127,5 +127,3 @@ with check (rls_helpers.has_tenant_access(tenant));
 
 
 CREATE TRIGGER tr_comments_set_tenant_id BEFORE INSERT OR UPDATE ON public.comments FOR EACH ROW EXECUTE FUNCTION derive_tenant_from_ticket();
-
-
