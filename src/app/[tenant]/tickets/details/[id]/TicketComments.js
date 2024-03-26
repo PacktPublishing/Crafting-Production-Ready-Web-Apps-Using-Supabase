@@ -10,22 +10,23 @@ export function TicketComments({ ticket, initialComments }) {
   const [comments, setComments] = useState(initialComments || []);
 
   useEffect(() => {
+    const listener = (payload) => {
+      console.log("Change received!", payload);
+    };
+
     const subscription = supabase
-      .channel("schema-db-changes")
-      .on("postgres_changes", {
-        event: "*",
-        schema: "public",
-        table: "comments",
-      })
-      // .on("postgres_changes", {
-      //   event: "UPDATE",
-      //   schema: "public",
-      //   table: "comments",
-      //   filter: `ticket=eq.${ticket}`,
-      // })
-      .subscribe((payload) => {
-        console.log("Change received!", payload);
-      });
+      .channel("my-channel")
+      .on(
+        "postgres_changes",
+        {
+          event: "*",
+          schema: "public",
+          table: "comments",
+          filter: `ticket=eq.${ticket}`,
+        },
+        listener,
+      )
+      .subscribe();
 
     return () => subscription.unsubscribe();
   }, []);
