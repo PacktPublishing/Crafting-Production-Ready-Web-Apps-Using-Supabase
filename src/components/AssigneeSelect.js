@@ -24,7 +24,7 @@ export function AssigneeSelect({
   return (
     <select
       name="assignee"
-      value={initialValue ?? ""}
+      value={initialValue === null ? "" : initialValue}
       disabled={users === null || disabled}
       onChange={(e) => {
         onValueChanged(e.target.value);
