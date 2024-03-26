@@ -1,6 +1,7 @@
 "use client";
 import { useRef } from "react";
 import classes from "./TicketDetails.module.css";
+import { getSupabaseBrowserClient } from "@/supabase-utils/browserClient";
 
 const comments = [
   {
@@ -15,8 +16,9 @@ const comments = [
   },
 ];
 
-export function TicketComments() {
+export function TicketComments({ ticket }) {
   const commentRef = useRef(null);
+  const supabase = getSupabaseBrowserClient();
 
   return (
     <footer>
@@ -25,14 +27,28 @@ export function TicketComments() {
       <form
         onSubmit={(event) => {
           event.preventDefault();
-          alert("TODO: Add comment");
+          const comment_text = commentRef.current.value.trim();
+
+          if (!comment_text) alert("Please enter a comment");
+
+          commentRef.disabled = true;
+
+          supabase
+            .from("comments")
+            .insert({
+              ticket,
+              comment_text,
+            })
+            .then(() => {
+              commentRef.current.value = "";
+              commentRef.disabled = false;
+            });
         }}
       >
-        <textarea ref={commentRef} placeholder="Add a comment" />
+        <textarea ref={commentRef} placeholder="Add a comment" required />
         <button type="submit">Add comment</button>
       </form>
 
-      {/* <section>We have {comments.length} comments.</section> */}
       <section>
         {comments.map((comment) => (
           <article key={comment.date} className={classes.comment}>
