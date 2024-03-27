@@ -11,7 +11,23 @@ export function TicketComments({ ticket, initialComments }) {
 
   useEffect(() => {
     const listener = (payload) => {
-      console.log("Change received!", payload);
+      const eventType = payload.eventType;
+
+      console.log("eventType", payload);
+
+      if (eventType === "INSERT") {
+        setComments((prevComments) => [...prevComments, payload.new]);
+      } else if (eventType === "DELETE") {
+        setComments((prevComments) =>
+          prevComments.filter((comment) => comment.id !== payload.old.id),
+        );
+      } else if (eventType === "UPDATE") {
+        setComments((prevComments) =>
+          prevComments.map((comment) =>
+            comment.id === payload.new.id ? payload.new : comment,
+          ),
+        );
+      }
     };
 
     const subscription = supabase
@@ -22,7 +38,7 @@ export function TicketComments({ ticket, initialComments }) {
           event: "*",
           schema: "public",
           table: "comments",
-          filter: `ticket=eq.${ticket}`,
+          // filter: `ticket=eq.${ticket}`,
         },
         listener,
       )

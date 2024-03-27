@@ -85,7 +85,7 @@ grant truncate on table "public"."comments" to "service_role";
 
 grant update on table "public"."comments" to "service_role";
 
-CREATE TRIGGER tr_comments_autoset_author_name BEFORE INSERT OR UPDATE ON public.comments FOR EACH ROW EXECUTE FUNCTION autoset_author_name();
-CREATE TRIGGER tr_comments_autoset_created_by BEFORE INSERT OR UPDATE ON public.comments FOR EACH ROW EXECUTE FUNCTION set_created_by_value();
+CREATE TRIGGER tr_comments_autoset_author_name BEFORE INSERT ON public.comments FOR EACH ROW EXECUTE FUNCTION autoset_author_name();
+CREATE TRIGGER tr_comments_autoset_created_by BEFORE INSERT ON public.comments FOR EACH ROW EXECUTE FUNCTION set_created_by_value();
 
 CREATE TRIGGER tr_tickets_autoset_author_name BEFORE INSERT ON public.tickets FOR EACH ROW EXECUTE FUNCTION autoset_author_name();
